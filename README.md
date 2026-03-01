@@ -2,6 +2,10 @@
 
 A [Homey](https://homey.app) app that tracks your Color Line ferry bookings and exposes live travel data as device capabilities and flow tokens.
 
+## Disclaimer
+
+Not endorsed nor supported by Color Line. Unofficial. This was not made to be 'the beast', but to solve a specific usecase and partly use webscaping. If it works; nice! If it suddenly doesn't; give me a heads up and I'll have opencode take a look :)
+
 ## What it does
 
 Color Line Booking retrieves your booking details from Color Line's booking system and keeps them updated on your Homey. All data is available as device capabilities for use in the Homey UI and as flow tokens in automations.
@@ -69,6 +73,11 @@ Polling interval is configurable in device settings (default: 60 minutes, min: 1
 
 MIT
 
+## Notes
+
+Created largely by opencode and AI. Code review has not revealed security issues. Color Line has no official API nor supported this app in any way. All contributions, ideas and feedback welcome. 
+
 ## Author
 
-Steffen Fridtjofsen
+- Steffen Fridtjofsen
+- opencode
