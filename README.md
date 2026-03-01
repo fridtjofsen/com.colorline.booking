@@ -1,10 +1,10 @@
-# Color Line Connect
+# Color Line Booking
 
 A [Homey](https://homey.app) app that tracks your Color Line ferry bookings and exposes live travel data as device capabilities and flow tokens.
 
 ## What it does
 
-Color Line Connect retrieves your booking details from Color Line's booking system and keeps them updated on your Homey. All data is available as device capabilities for use in the Homey UI and as flow tokens in automations.
+Color Line Booking retrieves your booking details from Color Line's booking system and keeps them updated on your Homey. All data is available as device capabilities for use in the Homey UI and as flow tokens in automations.
 
 ### Tracked data
 
