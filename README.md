@@ -1,6 +1,6 @@
 # Color Line Booking
 
-A [Homey](https://homey.app) app that tracks your Color Line ferry bookings and exposes live travel data as device capabilities and flow tokens.
+A [Homey app](https://homey.app/en-no/app/com.colorline.booking/Color-Line-Booking/test/) that tracks your Color Line ferry bookings and exposes live travel data as device capabilities and flow tokens. Currently in beta/test mode only.
 
 ## Disclaimer
 
