@@ -1,0 +1,16 @@
+{
+  "name": "com.colorline.booking",
+  "version": "0.1.0",
+  "description": "Track your Color Line bookings and next travel data on Homey",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Steffen Fridtjofsen",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
+}

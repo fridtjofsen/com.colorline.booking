@@ -1,0 +1,479 @@
+{
+  "id": "com.colorline.booking",
+  "version": "0.1.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Color Line Connect"
+  },
+  "description": {
+    "en": "Track your Color Line bookings and next travel data",
+    "no": "Spor dine Color Line-reiser"
+  },
+  "category": [
+    "internet"
+  ],
+  "brandColor": "#002B5C",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Steffen Fridtjofsen",
+    "email": "s@j7.no"
+  },
+  "drivers": [
+    {
+      "id": "booking",
+      "name": {
+        "en": "Color Line Booking"
+      },
+      "class": "other",
+      "capabilities": [
+        "measure_time_remaining",
+        "days_until_departure",
+        "departure_time",
+        "arrival_time",
+        "measure_duration",
+        "ship_name",
+        "booking_reference",
+        "route",
+        "trip_type",
+        "cabin_info",
+        "guest_count",
+        "total_price",
+        "return_departure_time",
+        "return_arrival_time",
+        "return_duration"
+      ],
+      "capabilitiesOptions": {
+        "measure_time_remaining": {
+          "title": {
+            "en": "Hours until departure"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/booking/assets/images/small.png",
+        "large": "/drivers/booking/assets/images/large.png",
+        "xlarge": "/drivers/booking/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "title": {
+              "en": "Find Booking"
+            },
+            "usernameLabel": {
+              "en": "Last Name"
+            },
+            "passwordLabel": {
+              "en": "Booking Number"
+            },
+            "hint": {
+              "en": "Enter your Last Name and Booking Number (not password) to track a specific booking."
+            }
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+            {
+                "id": "polling_interval",
+                "type": "number",
+                "label": {
+                    "en": "Polling Interval (minutes)"
+                },
+                "value": 60,
+                "min": 15,
+                "max": 1440
+            }
+      ]
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "hours_dropped_below",
+        "title": {
+          "en": "Hours until departure dropped below..."
+        },
+        "titleFormatted": {
+          "en": "Hours until departure dropped below [[hours]]"
+        },
+        "hint": {
+          "en": "Triggers when the hours remaining until departure drops below the specified value."
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "hours",
+            "title": {
+              "en": "Hours"
+            },
+            "min": 0,
+            "step": 1
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
+      },
+      {
+        "id": "hours_rose_above",
+        "title": {
+          "en": "Hours until departure rose above..."
+        },
+        "titleFormatted": {
+          "en": "Hours until departure rose above [[hours]]"
+        },
+        "hint": {
+          "en": "Triggers when the hours remaining until departure rises above the specified value (e.g. when a new booking with a later departure is tracked)."
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "hours",
+            "title": {
+              "en": "Hours"
+            },
+            "min": 0,
+            "step": 1
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
+      },
+      {
+        "id": "price_changed",
+        "title": {
+          "en": "Price changed"
+        },
+        "hint": {
+          "en": "Triggers when the total price of the booking changes."
+        },
+        "tokens": [
+          {
+            "name": "old_price",
+            "type": "string",
+            "title": {
+              "en": "Old price"
+            }
+          },
+          {
+            "name": "new_price",
+            "type": "string",
+            "title": {
+              "en": "New price"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
+      },
+      {
+        "id": "ship_changed",
+        "title": {
+          "en": "Ship changed"
+        },
+        "hint": {
+          "en": "Triggers when the ship assigned to the booking changes."
+        },
+        "tokens": [
+          {
+            "name": "old_ship",
+            "type": "string",
+            "title": {
+              "en": "Old ship"
+            }
+          },
+          {
+            "name": "new_ship",
+            "type": "string",
+            "title": {
+              "en": "New ship"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
+      },
+      {
+        "id": "departure_date_changed",
+        "title": {
+          "en": "Departure date changed"
+        },
+        "hint": {
+          "en": "Triggers when the departure date or time changes."
+        },
+        "tokens": [
+          {
+            "name": "old_departure",
+            "type": "string",
+            "title": {
+              "en": "Old departure"
+            }
+          },
+          {
+            "name": "new_departure",
+            "type": "string",
+            "title": {
+              "en": "New departure"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "hours_less_than",
+        "title": {
+          "en": "Hours until departure is less than..."
+        },
+        "titleFormatted": {
+          "en": "Hours until departure is less than [[hours]]"
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "hours",
+            "title": {
+              "en": "Hours"
+            },
+            "min": 0,
+            "step": 1
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
+      },
+      {
+        "id": "hours_greater_than",
+        "title": {
+          "en": "Hours until departure is greater than..."
+        },
+        "titleFormatted": {
+          "en": "Hours until departure is greater than [[hours]]"
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "hours",
+            "title": {
+              "en": "Hours"
+            },
+            "min": 0,
+            "step": 1
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
+      }
+    ]
+  },
+  "capabilities": {
+    "measure_time_remaining": {
+      "type": "number",
+      "title": {
+        "en": "Hours until departure"
+      },
+      "units": {
+        "en": "h"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "insights": true,
+      "icon": "/assets/icons/measure_time_remaining.svg"
+    },
+    "days_until_departure": {
+      "type": "number",
+      "title": {
+        "en": "Days until departure"
+      },
+      "units": {
+        "en": "d"
+      },
+      "decimals": 1,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "insights": true,
+      "icon": "/assets/icons/days_until_departure.svg"
+    },
+    "departure_time": {
+      "type": "string",
+      "title": {
+        "en": "Departure Time"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/departure_time.svg"
+    },
+    "ship_name": {
+      "type": "string",
+      "title": {
+        "en": "Ship"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/ship_name.svg"
+    },
+    "booking_reference": {
+      "type": "string",
+      "title": {
+        "en": "Booking Reference"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/booking_reference.svg"
+    },
+    "route": {
+      "type": "string",
+      "title": {
+        "en": "Route"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/route.svg"
+    },
+    "arrival_time": {
+      "type": "string",
+      "title": {
+        "en": "Arrival Time"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/arrival_time.svg"
+    },
+    "measure_duration": {
+      "type": "string",
+      "title": {
+        "en": "Trip Duration"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/measure_duration.svg"
+    },
+    "trip_type": {
+      "type": "string",
+      "title": {
+        "en": "Trip Type"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/trip_type.svg"
+    },
+    "cabin_info": {
+      "type": "string",
+      "title": {
+        "en": "Cabins"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/cabin_info.svg"
+    },
+    "guest_count": {
+      "type": "number",
+      "title": {
+        "en": "Guests"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/guest_count.svg"
+    },
+    "total_price": {
+      "type": "string",
+      "title": {
+        "en": "Total Price"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/total_price.svg"
+    },
+    "return_departure_time": {
+      "type": "string",
+      "title": {
+        "en": "Return Departure"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/return_departure_time.svg"
+    },
+    "return_arrival_time": {
+      "type": "string",
+      "title": {
+        "en": "Return Arrival"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/return_arrival_time.svg"
+    },
+    "return_duration": {
+      "type": "string",
+      "title": {
+        "en": "Return Duration"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/return_duration.svg"
+    }
+  }
+}
