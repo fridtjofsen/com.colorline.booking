@@ -1,7 +1,7 @@
 {
   "name": "com.colorline.booking",
   "version": "0.1.0",
-  "description": "Track your sailings and next travel data",
+  "description": "Track your next sailing",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
