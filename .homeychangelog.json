@@ -1,5 +1,8 @@
 {
   "0.1.0": {
     "en": "Initial release. Track Color Line bookings with departure/arrival times, ship name, cabin info, guest count, price, route, trip type, and return leg data. Includes flow triggers for hours threshold, price/ship/departure changes, and condition cards for hours comparison."
+  },
+  "0.1.1": {
+    "en": "Updated readme and images"
   }
 }
