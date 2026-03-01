@@ -1,3 +1,0 @@
-Hold oversikt over din kommende Color Line-reise direkte fra Homey. Color Line Booking henter automatisk bookingdetaljene dine -- avgangs- og ankomsttider, skipsnavn, lugar-informasjon, antall gjester, pris og returdata for tur-retur-reiser -- og holder alt oppdatert slik at du alltid vet noyaktig nar neste seilas er.
-
-Bruk den i flows for a utlose automatiseringer basert pa hvor mange timer det er igjen til avgang, eller reager pa endringer i pris, skip eller ruteplan. Bare skriv inn etternavnet ditt og bookingnummeret under oppsettet, og alle bookingdataene dine er tilgjengelige som live-enhetsegenskaper og flow-tokens i Homey.
