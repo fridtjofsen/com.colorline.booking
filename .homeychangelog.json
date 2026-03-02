@@ -16,5 +16,11 @@
   },
   "0.1.5": {
     "en": "Updated readme and texts to guideline specs"
+  },
+  "0.1.6": {
+    "en": "Fixed a bug where booking data would stop refreshing after the first sync. Added a \"Refresh booking data\" flow action for on-demand updates. Improved resilience against Color Line site updates."
+  },
+  "0.1.7": {
+    "en": "Fixed a bug where booking data would stop refreshing after the first sync. Added a 'Refresh booking data' flow action for on-demand updates. Improved resilience against Color Line site updates."
   }
 }
