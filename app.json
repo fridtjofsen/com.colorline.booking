@@ -691,5 +691,24 @@
       "uiComponent": "sensor",
       "icon": "/assets/icons/total_price.svg"
     }
+  },
+  "widgets": {
+    "booking-countdown": {
+      "id": "booking-countdown",
+      "name": {
+        "en": "Departure Countdown"
+      },
+      "height": "50%",
+      "devices": {
+        "type": "app",
+        "singular": true
+      },
+      "api": {
+        "getBookingData": {
+          "method": "GET",
+          "path": "/"
+        }
+      }
+    }
   }
 }
