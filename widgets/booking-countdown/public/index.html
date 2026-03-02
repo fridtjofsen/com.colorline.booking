@@ -58,20 +58,26 @@
             
             async function update() {
                 try {
-                    const deviceIds = await Homey.getDeviceIds();
-                    if (!deviceIds || deviceIds.length === 0) {
+                    // getDeviceIds() may return an array or an object keyed by ID
+                    const raw = await Homey.getDeviceIds();
+                    let ids = [];
+                    if (Array.isArray(raw)) {
+                        ids = raw;
+                    } else if (raw && typeof raw === 'object') {
+                        ids = Object.keys(raw);
+                    }
+
+                    if (ids.length === 0) {
                         document.getElementById('content').innerText = 'No device selected';
                         return;
                     }
-                    
-                    const deviceId = deviceIds[0];
-                    // Call the widget's API
+
+                    const deviceId = ids[0];
                     const data = await Homey.api('GET', `/?deviceId=${deviceId}`);
-                    
                     render(data);
                 } catch (err) {
                     console.error(err);
-                    document.getElementById('content').innerText = 'Error loading data';
+                    document.getElementById('content').innerText = 'Error refreshing data';
                 }
             }
 
