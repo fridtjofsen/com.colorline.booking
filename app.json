@@ -312,6 +312,27 @@
           }
         ]
       }
+    ],
+    "actions": [
+      {
+        "id": "refresh_booking",
+        "title": {
+          "en": "Refresh booking data"
+        },
+        "titleFormatted": {
+          "en": "Refresh booking data for [[device]]"
+        },
+        "hint": {
+          "en": "Manually trigger a data refresh from Color Line for this booking."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
+      }
     ]
   },
   "capabilities": {

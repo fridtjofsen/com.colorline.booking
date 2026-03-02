@@ -1,3 +1,4 @@
+require('dotenv').config();
 const ColorLineAPI = require('./lib/ColorLineAPI');
 const fetch = require('node-fetch');
 

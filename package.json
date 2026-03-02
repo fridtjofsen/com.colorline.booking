@@ -12,5 +12,8 @@
   "type": "commonjs",
   "dependencies": {
     "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0"
   }
 }

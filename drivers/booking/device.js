@@ -16,13 +16,6 @@ class BookingDevice extends Homey.Device {
             departureTime: null  // human-readable string for comparison
         };
 
-        try {
-            this.api = new ColorLineAPI();
-            this.log('ColorLineAPI initialized');
-        } catch (error) {
-            this.error('Failed to initialize ColorLineAPI:', error);
-        }
-
         // ── Register flow condition cards ────────────────────────
         this._condHoursLessThan = this.homey.flow.getConditionCard('hours_less_than');
         this._condHoursLessThan.registerRunListener(async (args) => {
@@ -52,6 +45,14 @@ class BookingDevice extends Homey.Device {
         this._trigPriceChanged = this.homey.flow.getTriggerCard('price_changed');
         this._trigShipChanged = this.homey.flow.getTriggerCard('ship_changed');
         this._trigDepartureDateChanged = this.homey.flow.getTriggerCard('departure_date_changed');
+
+        // ── Register flow action cards ──────────────────────────
+        this._actRefreshBooking = this.homey.flow.getActionCard('refresh_booking');
+        this._actRefreshBooking.registerRunListener(async () => {
+            this.log('Manual refresh triggered via flow action');
+            await this.poll();
+            return true;
+        });
 
         // Retrieve polling interval from settings, default to 60 minutes
         const settings = this.getSettings();
@@ -112,7 +113,7 @@ class BookingDevice extends Homey.Device {
         await this.poll();
         
         this.pollingInterval = this.homey.setInterval(() => {
-            this.poll();
+            this.poll().catch(err => this.error('Interval poll error:', err));
         }, intervalMs);
     }
     
@@ -136,11 +137,13 @@ class BookingDevice extends Homey.Device {
         this.log('Polling for booking update...');
         
         try {
-            if (!this.api) {
-                this.api = new ColorLineAPI();
-            }
+            // Create a fresh API instance on every poll to guarantee a clean
+            // session/cookie state. Reusing an instance across polls means
+            // getContent() is skipped (cookie already set) and the session
+            // expires between polls, silently failing all subsequent fetches.
+            const api = new ColorLineAPI();
 
-            const result = await this.api.getBookingURL(lastName, bookingRef);
+            const result = await api.getBookingURL(lastName, bookingRef);
             
             if (result) {
                 this.log('Booking found:', JSON.stringify(result));
@@ -203,7 +206,7 @@ class BookingDevice extends Homey.Device {
                     // Use CET-aware date construction since Color Line times are in Europe/Oslo
                     // Fall back to route-specific default departure hour if time not extracted
                     const timeStr = result.time || (defaultDepartureHour !== null ? `${defaultDepartureHour}:00` : null);
-                    const departureDate = this.api.createCETDate(result.date, timeStr);
+                    const departureDate = api.createCETDate(result.date, timeStr);
 
                     const now = new Date();
                     const diffMs = departureDate.getTime() - now.getTime();
@@ -249,7 +252,7 @@ class BookingDevice extends Homey.Device {
 
                 // ── Arrival time ─────────────────────────────────────────
                 if (result.arrivalDate && this.hasCapability('arrival_time')) {
-                    const arrivalDate = this.api.createCETDate(result.arrivalDate, result.arrivalTime);
+                    const arrivalDate = api.createCETDate(result.arrivalDate, result.arrivalTime);
                     const arrStr = arrivalDate.toLocaleDateString('nb-NO', {
                         timeZone: 'Europe/Oslo',
                         weekday: 'long',
@@ -319,7 +322,7 @@ class BookingDevice extends Homey.Device {
                 // ── Return leg (round trips only) ───────────────────────
                 // Return departure time
                 if (result.returnDepartureDate && this.hasCapability('return_departure_time')) {
-                    const retDepDate = this.api.createCETDate(result.returnDepartureDate, result.returnDepartureTime);
+                    const retDepDate = api.createCETDate(result.returnDepartureDate, result.returnDepartureTime);
                     const retDepStr = retDepDate.toLocaleDateString('nb-NO', {
                         timeZone: 'Europe/Oslo',
                         weekday: 'long',
@@ -335,7 +338,7 @@ class BookingDevice extends Homey.Device {
 
                 // Return arrival time
                 if (result.returnArrivalDate && this.hasCapability('return_arrival_time')) {
-                    const retArrDate = this.api.createCETDate(result.returnArrivalDate, result.returnArrivalTime);
+                    const retArrDate = api.createCETDate(result.returnArrivalDate, result.returnArrivalTime);
                     const retArrStr = retArrDate.toLocaleDateString('nb-NO', {
                         timeZone: 'Europe/Oslo',
                         weekday: 'long',
