@@ -22,5 +22,8 @@
   },
   "0.1.7": {
     "en": "Added departure countdown widget, days-based flow cards, booking status, and payment status tracking. Improved expired booking handling and re-authentication."
+  },
+  "0.1.8": {
+    "en": "Added days-based flow cards (triggers: 'Days dropped below / rose above', conditions: 'Days less than / greater than'). Added Booking Status and Payment Status capabilities with corresponding flow triggers (Sailing Departed, Payment Status Changed). Polling now stops automatically after departure. Added Last Name and Booking Number as editable device settings for re-authentication. New Departure Countdown widget showing route, ship, and live countdown."
   }
 }
