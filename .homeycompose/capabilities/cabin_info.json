@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Cabins"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/cabin_info.svg"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "com.colorline.booking",
+  "version": "0.1.8",
+  "compatibility": ">=12.3.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Color Line Booking"
+  },
+  "description": {
+    "en": "Track your next sailing"
+  },
+  "category": [
+    "internet"
+  ],
+  "brandColor": "#002B5C",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Steffen Fridtjofsen",
+    "email": "s@j7.no"
+  }
+}

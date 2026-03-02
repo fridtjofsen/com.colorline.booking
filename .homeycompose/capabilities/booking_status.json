@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Booking Status"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/booking_reference.svg"
+}

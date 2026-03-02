@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Trip Type"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/trip_type.svg"
+}

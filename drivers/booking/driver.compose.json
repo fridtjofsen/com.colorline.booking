@@ -1,0 +1,100 @@
+{
+  "name": {
+    "en": "Color Line Booking"
+  },
+  "class": "other",
+  "capabilities": [
+    "measure_time_remaining",
+    "days_until_departure",
+    "departure_time",
+    "arrival_time",
+    "measure_duration",
+    "ship_name",
+    "booking_reference",
+    "route",
+    "trip_type",
+    "cabin_info",
+    "guest_count",
+    "total_price",
+    "return_departure_time",
+    "return_arrival_time",
+    "return_duration",
+    "booking_status",
+    "payment_status"
+  ],
+  "capabilitiesOptions": {
+    "measure_time_remaining": {
+      "title": {
+        "en": "Hours until departure"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/booking/assets/images/small.png",
+    "large": "/drivers/booking/assets/images/large.png",
+    "xlarge": "/drivers/booking/assets/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "login_credentials",
+      "template": "login_credentials",
+      "options": {
+        "title": {
+          "en": "Find Booking"
+        },
+        "usernameLabel": {
+          "en": "Last Name"
+        },
+        "passwordLabel": {
+          "en": "Booking Number"
+        },
+        "hint": {
+          "en": "Enter your Last Name and Booking Number (not password) to track a specific booking."
+        }
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "id": "polling_interval",
+      "type": "number",
+      "label": {
+        "en": "Polling Interval (minutes)"
+      },
+      "value": 60,
+      "min": 15,
+      "max": 1440
+    },
+    {
+      "id": "lastName",
+      "type": "text",
+      "label": {
+        "en": "Last Name"
+      },
+      "hint": {
+        "en": "Last name on the booking"
+      }
+    },
+    {
+      "id": "bookingReference",
+      "type": "text",
+      "label": {
+        "en": "Booking Number"
+      },
+      "hint": {
+        "en": "Your booking reference number"
+      }
+    }
+  ]
+}

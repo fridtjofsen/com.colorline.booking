@@ -1,4 +1,5 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.colorline.booking",
   "version": "0.1.8",
   "compatibility": ">=12.3.0",
@@ -25,109 +26,6 @@
     "name": "Steffen Fridtjofsen",
     "email": "s@j7.no"
   },
-  "drivers": [
-    {
-      "id": "booking",
-      "name": {
-        "en": "Color Line Booking"
-      },
-      "class": "other",
-      "capabilities": [
-        "measure_time_remaining",
-        "days_until_departure",
-        "departure_time",
-        "arrival_time",
-        "measure_duration",
-        "ship_name",
-        "booking_reference",
-        "route",
-        "trip_type",
-        "cabin_info",
-        "guest_count",
-        "total_price",
-        "return_departure_time",
-        "return_arrival_time",
-        "return_duration",
-        "booking_status",
-        "payment_status"
-      ],
-      "capabilitiesOptions": {
-        "measure_time_remaining": {
-          "title": {
-            "en": "Hours until departure"
-          }
-        }
-      },
-      "images": {
-        "small": "/drivers/booking/assets/images/small.png",
-        "large": "/drivers/booking/assets/images/large.png",
-        "xlarge": "/drivers/booking/assets/images/xlarge.png"
-      },
-      "pair": [
-        {
-          "id": "login_credentials",
-          "template": "login_credentials",
-          "options": {
-            "title": {
-              "en": "Find Booking"
-            },
-            "usernameLabel": {
-              "en": "Last Name"
-            },
-            "passwordLabel": {
-              "en": "Booking Number"
-            },
-            "hint": {
-              "en": "Enter your Last Name and Booking Number (not password) to track a specific booking."
-            }
-          }
-        },
-        {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
-        }
-      ],
-      "settings": [
-        {
-          "id": "polling_interval",
-          "type": "number",
-          "label": {
-            "en": "Polling Interval (minutes)"
-          },
-          "value": 60,
-          "min": 15,
-          "max": 1440
-        },
-        {
-          "id": "lastName",
-          "type": "text",
-          "label": {
-            "en": "Last Name"
-          },
-          "hint": {
-            "en": "Last name on the booking"
-          }
-        },
-        {
-          "id": "bookingReference",
-          "type": "text",
-          "label": {
-            "en": "Booking Number"
-          },
-          "hint": {
-            "en": "Your booking reference number"
-          }
-        }
-      ]
-    }
-  ],
   "flow": {
     "triggers": [
       {
@@ -143,6 +41,11 @@
         },
         "args": [
           {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          },
+          {
             "type": "number",
             "name": "hours",
             "title": {
@@ -150,11 +53,6 @@
             },
             "min": 0,
             "step": 1
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=booking"
           }
         ]
       },
@@ -171,6 +69,11 @@
         },
         "args": [
           {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          },
+          {
             "type": "number",
             "name": "hours",
             "title": {
@@ -178,11 +81,6 @@
             },
             "min": 0,
             "step": 1
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=booking"
           }
         ]
       },
@@ -295,6 +193,11 @@
         },
         "args": [
           {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          },
+          {
             "type": "number",
             "name": "days",
             "title": {
@@ -302,11 +205,6 @@
             },
             "min": 0,
             "step": 1
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=booking"
           }
         ]
       },
@@ -323,6 +221,11 @@
         },
         "args": [
           {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          },
+          {
             "type": "number",
             "name": "days",
             "title": {
@@ -330,11 +233,6 @@
             },
             "min": 0,
             "step": 1
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=booking"
           }
         ]
       },
@@ -398,6 +296,11 @@
         },
         "args": [
           {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          },
+          {
             "type": "number",
             "name": "hours",
             "title": {
@@ -405,11 +308,6 @@
             },
             "min": 0,
             "step": 1
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=booking"
           }
         ]
       },
@@ -423,6 +321,11 @@
         },
         "args": [
           {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          },
+          {
             "type": "number",
             "name": "hours",
             "title": {
@@ -430,11 +333,6 @@
             },
             "min": 0,
             "step": 1
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=booking"
           }
         ]
       },
@@ -448,6 +346,11 @@
         },
         "args": [
           {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          },
+          {
             "type": "number",
             "name": "days",
             "title": {
@@ -455,11 +358,6 @@
             },
             "min": 0,
             "step": 1
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=booking"
           }
         ]
       },
@@ -473,6 +371,11 @@
         },
         "args": [
           {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          },
+          {
             "type": "number",
             "name": "days",
             "title": {
@@ -480,11 +383,6 @@
             },
             "min": 0,
             "step": 1
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=booking"
           }
         ]
       }
@@ -511,20 +409,169 @@
       }
     ]
   },
-  "capabilities": {
-    "measure_time_remaining": {
-      "type": "number",
-      "title": {
-        "en": "Hours until departure"
+  "drivers": [
+    {
+      "name": {
+        "en": "Color Line Booking"
       },
-      "units": {
-        "en": "h"
+      "class": "other",
+      "capabilities": [
+        "measure_time_remaining",
+        "days_until_departure",
+        "departure_time",
+        "arrival_time",
+        "measure_duration",
+        "ship_name",
+        "booking_reference",
+        "route",
+        "trip_type",
+        "cabin_info",
+        "guest_count",
+        "total_price",
+        "return_departure_time",
+        "return_arrival_time",
+        "return_duration",
+        "booking_status",
+        "payment_status"
+      ],
+      "capabilitiesOptions": {
+        "measure_time_remaining": {
+          "title": {
+            "en": "Hours until departure"
+          }
+        }
+      },
+      "images": {
+        "small": "/drivers/booking/assets/images/small.png",
+        "large": "/drivers/booking/assets/images/large.png",
+        "xlarge": "/drivers/booking/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "title": {
+              "en": "Find Booking"
+            },
+            "usernameLabel": {
+              "en": "Last Name"
+            },
+            "passwordLabel": {
+              "en": "Booking Number"
+            },
+            "hint": {
+              "en": "Enter your Last Name and Booking Number (not password) to track a specific booking."
+            }
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "id": "polling_interval",
+          "type": "number",
+          "label": {
+            "en": "Polling Interval (minutes)"
+          },
+          "value": 60,
+          "min": 15,
+          "max": 1440
+        },
+        {
+          "id": "lastName",
+          "type": "text",
+          "label": {
+            "en": "Last Name"
+          },
+          "hint": {
+            "en": "Last name on the booking"
+          }
+        },
+        {
+          "id": "bookingReference",
+          "type": "text",
+          "label": {
+            "en": "Booking Number"
+          },
+          "hint": {
+            "en": "Your booking reference number"
+          }
+        }
+      ],
+      "id": "booking"
+    }
+  ],
+  "widgets": {
+    "booking-countdown": {
+      "name": {
+        "en": "Departure Countdown"
+      },
+      "height": "50%",
+      "devices": {
+        "type": "app",
+        "singular": true
+      },
+      "api": {
+        "getBookingData": {
+          "method": "GET",
+          "path": "/"
+        }
+      },
+      "id": "booking-countdown",
+      "settings": []
+    }
+  },
+  "capabilities": {
+    "arrival_time": {
+      "type": "string",
+      "title": {
+        "en": "Arrival Time"
       },
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
-      "insights": true,
-      "icon": "/assets/icons/measure_time_remaining.svg"
+      "icon": "/assets/icons/arrival_time.svg"
+    },
+    "booking_reference": {
+      "type": "string",
+      "title": {
+        "en": "Booking Reference"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/booking_reference.svg"
+    },
+    "booking_status": {
+      "type": "string",
+      "title": {
+        "en": "Booking Status"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/booking_reference.svg"
+    },
+    "cabin_info": {
+      "type": "string",
+      "title": {
+        "en": "Cabins"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/cabin_info.svg"
     },
     "days_until_departure": {
       "type": "number",
@@ -551,45 +598,15 @@
       "uiComponent": "sensor",
       "icon": "/assets/icons/departure_time.svg"
     },
-    "ship_name": {
-      "type": "string",
+    "guest_count": {
+      "type": "number",
       "title": {
-        "en": "Ship"
+        "en": "Guests"
       },
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
-      "icon": "/assets/icons/ship_name.svg"
-    },
-    "booking_reference": {
-      "type": "string",
-      "title": {
-        "en": "Booking Reference"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "icon": "/assets/icons/booking_reference.svg"
-    },
-    "route": {
-      "type": "string",
-      "title": {
-        "en": "Route"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "icon": "/assets/icons/route.svg"
-    },
-    "arrival_time": {
-      "type": "string",
-      "title": {
-        "en": "Arrival Time"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "icon": "/assets/icons/arrival_time.svg"
+      "icon": "/assets/icons/guest_count.svg"
     },
     "measure_duration": {
       "type": "string",
@@ -601,55 +618,29 @@
       "uiComponent": "sensor",
       "icon": "/assets/icons/measure_duration.svg"
     },
-    "trip_type": {
-      "type": "string",
-      "title": {
-        "en": "Trip Type"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "icon": "/assets/icons/trip_type.svg"
-    },
-    "cabin_info": {
-      "type": "string",
-      "title": {
-        "en": "Cabins"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "icon": "/assets/icons/cabin_info.svg"
-    },
-    "guest_count": {
+    "measure_time_remaining": {
       "type": "number",
       "title": {
-        "en": "Guests"
+        "en": "Hours until departure"
+      },
+      "units": {
+        "en": "h"
       },
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
-      "icon": "/assets/icons/guest_count.svg"
+      "insights": true,
+      "icon": "/assets/icons/measure_time_remaining.svg"
     },
-    "total_price": {
+    "payment_status": {
       "type": "string",
       "title": {
-        "en": "Total Price"
+        "en": "Payment Status"
       },
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
       "icon": "/assets/icons/total_price.svg"
-    },
-    "return_departure_time": {
-      "type": "string",
-      "title": {
-        "en": "Return Departure"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "icon": "/assets/icons/return_departure_time.svg"
     },
     "return_arrival_time": {
       "type": "string",
@@ -661,6 +652,16 @@
       "uiComponent": "sensor",
       "icon": "/assets/icons/return_arrival_time.svg"
     },
+    "return_departure_time": {
+      "type": "string",
+      "title": {
+        "en": "Return Departure"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/return_departure_time.svg"
+    },
     "return_duration": {
       "type": "string",
       "title": {
@@ -671,44 +672,45 @@
       "uiComponent": "sensor",
       "icon": "/assets/icons/return_duration.svg"
     },
-    "booking_status": {
+    "route": {
       "type": "string",
       "title": {
-        "en": "Booking Status"
+        "en": "Route"
       },
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
-      "icon": "/assets/icons/booking_reference.svg"
+      "icon": "/assets/icons/route.svg"
     },
-    "payment_status": {
+    "ship_name": {
       "type": "string",
       "title": {
-        "en": "Payment Status"
+        "en": "Ship"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/ship_name.svg"
+    },
+    "total_price": {
+      "type": "string",
+      "title": {
+        "en": "Total Price"
       },
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
       "icon": "/assets/icons/total_price.svg"
-    }
-  },
-  "widgets": {
-    "booking-countdown": {
-      "id": "booking-countdown",
-      "name": {
-        "en": "Departure Countdown"
+    },
+    "trip_type": {
+      "type": "string",
+      "title": {
+        "en": "Trip Type"
       },
-      "height": "50%",
-      "devices": {
-        "type": "app",
-        "singular": true
-      },
-      "api": {
-        "getBookingData": {
-          "method": "GET",
-          "path": "/"
-        }
-      }
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/trip_type.svg"
     }
   }
 }

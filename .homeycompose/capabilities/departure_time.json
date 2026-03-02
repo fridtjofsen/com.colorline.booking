@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Departure Time"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/departure_time.svg"
+}

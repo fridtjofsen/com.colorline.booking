@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Arrival Time"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/arrival_time.svg"
+}

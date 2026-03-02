@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Route"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/route.svg"
+}

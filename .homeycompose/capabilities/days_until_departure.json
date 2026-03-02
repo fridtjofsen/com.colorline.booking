@@ -1,0 +1,15 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Days until departure"
+  },
+  "units": {
+    "en": "d"
+  },
+  "decimals": 1,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "insights": true,
+  "icon": "/assets/icons/days_until_departure.svg"
+}

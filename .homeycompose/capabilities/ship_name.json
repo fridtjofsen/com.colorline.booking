@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Ship"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icons/ship_name.svg"
+}

@@ -1,0 +1,14 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Hours until departure"
+  },
+  "units": {
+    "en": "h"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "insights": true,
+  "icon": "/assets/icons/measure_time_remaining.svg"
+}

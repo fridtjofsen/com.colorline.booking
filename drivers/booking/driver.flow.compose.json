@@ -1,0 +1,301 @@
+{
+  "triggers": [
+    {
+      "id": "hours_dropped_below",
+      "title": {
+        "en": "Hours until departure dropped below..."
+      },
+      "titleFormatted": {
+        "en": "Hours until departure dropped below [[hours]]"
+      },
+      "hint": {
+        "en": "Triggers when the hours remaining until departure drops below the specified value."
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "hours",
+          "title": {
+            "en": "Hours"
+          },
+          "min": 0,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "hours_rose_above",
+      "title": {
+        "en": "Hours until departure rose above..."
+      },
+      "titleFormatted": {
+        "en": "Hours until departure rose above [[hours]]"
+      },
+      "hint": {
+        "en": "Triggers when the hours remaining until departure rises above the specified value (e.g. when a new booking with a later departure is tracked)."
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "hours",
+          "title": {
+            "en": "Hours"
+          },
+          "min": 0,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "price_changed",
+      "title": {
+        "en": "Price changed"
+      },
+      "hint": {
+        "en": "Triggers when the total price of the booking changes."
+      },
+      "tokens": [
+        {
+          "name": "old_price",
+          "type": "string",
+          "title": {
+            "en": "Old price"
+          }
+        },
+        {
+          "name": "new_price",
+          "type": "string",
+          "title": {
+            "en": "New price"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ship_changed",
+      "title": {
+        "en": "Ship changed"
+      },
+      "hint": {
+        "en": "Triggers when the ship assigned to the booking changes."
+      },
+      "tokens": [
+        {
+          "name": "old_ship",
+          "type": "string",
+          "title": {
+            "en": "Old ship"
+          }
+        },
+        {
+          "name": "new_ship",
+          "type": "string",
+          "title": {
+            "en": "New ship"
+          }
+        }
+      ]
+    },
+    {
+      "id": "departure_date_changed",
+      "title": {
+        "en": "Departure date changed"
+      },
+      "hint": {
+        "en": "Triggers when the departure date or time changes."
+      },
+      "tokens": [
+        {
+          "name": "old_departure",
+          "type": "string",
+          "title": {
+            "en": "Old departure"
+          }
+        },
+        {
+          "name": "new_departure",
+          "type": "string",
+          "title": {
+            "en": "New departure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "days_dropped_below",
+      "title": {
+        "en": "Days until departure dropped below..."
+      },
+      "titleFormatted": {
+        "en": "Days until departure dropped below [[days]]"
+      },
+      "hint": {
+        "en": "Triggers when the days remaining until departure drops below the specified value."
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "days",
+          "title": {
+            "en": "Days"
+          },
+          "min": 0,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "days_rose_above",
+      "title": {
+        "en": "Days until departure rose above..."
+      },
+      "titleFormatted": {
+        "en": "Days until departure rose above [[days]]"
+      },
+      "hint": {
+        "en": "Triggers when the days remaining until departure rises above the specified value."
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "days",
+          "title": {
+            "en": "Days"
+          },
+          "min": 0,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "sailing_departed",
+      "title": {
+        "en": "Sailing has departed"
+      },
+      "hint": {
+        "en": "Triggers when the departure time has passed."
+      }
+    },
+    {
+      "id": "payment_status_changed",
+      "title": {
+        "en": "Payment status changed"
+      },
+      "hint": {
+        "en": "Triggers when the payment status of the booking changes."
+      },
+      "tokens": [
+        {
+          "name": "old_status",
+          "type": "string",
+          "title": {
+            "en": "Old status"
+          }
+        },
+        {
+          "name": "new_status",
+          "type": "string",
+          "title": {
+            "en": "New status"
+          }
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "hours_less_than",
+      "title": {
+        "en": "Hours until departure is less than..."
+      },
+      "titleFormatted": {
+        "en": "Hours until departure is less than [[hours]]"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "hours",
+          "title": {
+            "en": "Hours"
+          },
+          "min": 0,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "hours_greater_than",
+      "title": {
+        "en": "Hours until departure is greater than..."
+      },
+      "titleFormatted": {
+        "en": "Hours until departure is greater than [[hours]]"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "hours",
+          "title": {
+            "en": "Hours"
+          },
+          "min": 0,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "days_less_than",
+      "title": {
+        "en": "Days until departure is less than..."
+      },
+      "titleFormatted": {
+        "en": "Days until departure is less than [[days]]"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "days",
+          "title": {
+            "en": "Days"
+          },
+          "min": 0,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "days_greater_than",
+      "title": {
+        "en": "Days until departure is greater than..."
+      },
+      "titleFormatted": {
+        "en": "Days until departure is greater than [[days]]"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "days",
+          "title": {
+            "en": "Days"
+          },
+          "min": 0,
+          "step": 1
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "refresh_booking",
+      "title": {
+        "en": "Refresh booking data"
+      },
+      "titleFormatted": {
+        "en": "Refresh booking data for [[device]]"
+      },
+      "hint": {
+        "en": "Manually trigger a data refresh from Color Line for this booking."
+      }
+    }
+  ]
+}
