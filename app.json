@@ -1,7 +1,7 @@
 {
   "id": "com.colorline.booking",
   "version": "0.1.7",
-  "compatibility": ">=5.0.0",
+  "compatibility": ">=12.3.0",
   "sdk": 3,
   "platforms": [
     "local"
@@ -47,7 +47,9 @@
         "total_price",
         "return_departure_time",
         "return_arrival_time",
-        "return_duration"
+        "return_duration",
+        "booking_status",
+        "payment_status"
       ],
       "capabilitiesOptions": {
         "measure_time_remaining": {
@@ -102,6 +104,26 @@
           "value": 60,
           "min": 15,
           "max": 1440
+        },
+        {
+          "id": "lastName",
+          "type": "text",
+          "label": {
+            "en": "Last Name"
+          },
+          "hint": {
+            "en": "Last name on the booking"
+          }
+        },
+        {
+          "id": "bookingReference",
+          "type": "text",
+          "label": {
+            "en": "Booking Number"
+          },
+          "hint": {
+            "en": "Your booking reference number"
+          }
         }
       ]
     }
@@ -259,6 +281,110 @@
             "filter": "driver_id=booking"
           }
         ]
+      },
+      {
+        "id": "days_dropped_below",
+        "title": {
+          "en": "Days until departure dropped below..."
+        },
+        "titleFormatted": {
+          "en": "Days until departure dropped below [[days]]"
+        },
+        "hint": {
+          "en": "Triggers when the days remaining until departure drops below the specified value."
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "days",
+            "title": {
+              "en": "Days"
+            },
+            "min": 0,
+            "step": 1
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
+      },
+      {
+        "id": "days_rose_above",
+        "title": {
+          "en": "Days until departure rose above..."
+        },
+        "titleFormatted": {
+          "en": "Days until departure rose above [[days]]"
+        },
+        "hint": {
+          "en": "Triggers when the days remaining until departure rises above the specified value."
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "days",
+            "title": {
+              "en": "Days"
+            },
+            "min": 0,
+            "step": 1
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
+      },
+      {
+        "id": "sailing_departed",
+        "title": {
+          "en": "Sailing has departed"
+        },
+        "hint": {
+          "en": "Triggers when the departure time has passed."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
+      },
+      {
+        "id": "payment_status_changed",
+        "title": {
+          "en": "Payment status changed"
+        },
+        "hint": {
+          "en": "Triggers when the payment status of the booking changes."
+        },
+        "tokens": [
+          {
+            "name": "old_status",
+            "type": "string",
+            "title": {
+              "en": "Old status"
+            }
+          },
+          {
+            "name": "new_status",
+            "type": "string",
+            "title": {
+              "en": "New status"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
       }
     ],
     "conditions": [
@@ -301,6 +427,56 @@
             "name": "hours",
             "title": {
               "en": "Hours"
+            },
+            "min": 0,
+            "step": 1
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
+      },
+      {
+        "id": "days_less_than",
+        "title": {
+          "en": "Days until departure is less than..."
+        },
+        "titleFormatted": {
+          "en": "Days until departure is less than [[days]]"
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "days",
+            "title": {
+              "en": "Days"
+            },
+            "min": 0,
+            "step": 1
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=booking"
+          }
+        ]
+      },
+      {
+        "id": "days_greater_than",
+        "title": {
+          "en": "Days until departure is greater than..."
+        },
+        "titleFormatted": {
+          "en": "Days until departure is greater than [[days]]"
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "days",
+            "title": {
+              "en": "Days"
             },
             "min": 0,
             "step": 1
@@ -494,6 +670,26 @@
       "setable": false,
       "uiComponent": "sensor",
       "icon": "/assets/icons/return_duration.svg"
+    },
+    "booking_status": {
+      "type": "string",
+      "title": {
+        "en": "Booking Status"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/booking_reference.svg"
+    },
+    "payment_status": {
+      "type": "string",
+      "title": {
+        "en": "Payment Status"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/total_price.svg"
     }
   }
 }

@@ -8,10 +8,16 @@ class BookingDevice extends Homey.Device {
     async onInit() {
         this.log('BookingDevice has been initialized');
         
+        // Capability migration
+        if (!this.hasCapability('booking_status')) await this.addCapability('booking_status');
+        if (!this.hasCapability('payment_status')) await this.addCapability('payment_status');
+
         // Track previous values for change-detection triggers
         this._previousValues = {
             hoursRemaining: null,
+            daysRemaining: null,
             totalPrice: null,
+            paymentStatus: null,
             shipName: null,
             departureTime: null  // human-readable string for comparison
         };
@@ -29,6 +35,18 @@ class BookingDevice extends Homey.Device {
             return hours !== null && hours > args.hours;
         });
 
+        this._condDaysLessThan = this.homey.flow.getConditionCard('days_less_than');
+        this._condDaysLessThan.registerRunListener(async (args) => {
+            const days = this.getCapabilityValue('days_until_departure');
+            return days !== null && days < args.days;
+        });
+
+        this._condDaysGreaterThan = this.homey.flow.getConditionCard('days_greater_than');
+        this._condDaysGreaterThan.registerRunListener(async (args) => {
+            const days = this.getCapabilityValue('days_until_departure');
+            return days !== null && days > args.days;
+        });
+
         // ── Register flow trigger cards ─────────────────────────
         this._trigHoursDroppedBelow = this.homey.flow.getTriggerCard('hours_dropped_below');
         this._trigHoursDroppedBelow.registerRunListener(async (args, state) => {
@@ -42,6 +60,18 @@ class BookingDevice extends Homey.Device {
             return state.previousHours <= args.hours && state.currentHours > args.hours;
         });
 
+        this._trigDaysDroppedBelow = this.homey.flow.getTriggerCard('days_dropped_below');
+        this._trigDaysDroppedBelow.registerRunListener(async (args, state) => {
+            return state.previousDays >= args.days && state.currentDays < args.days;
+        });
+
+        this._trigDaysRoseAbove = this.homey.flow.getTriggerCard('days_rose_above');
+        this._trigDaysRoseAbove.registerRunListener(async (args, state) => {
+            return state.previousDays <= args.days && state.currentDays > args.days;
+        });
+
+        this._trigSailingDeparted = this.homey.flow.getTriggerCard('sailing_departed');
+        this._trigPaymentStatusChanged = this.homey.flow.getTriggerCard('payment_status_changed');
         this._trigPriceChanged = this.homey.flow.getTriggerCard('price_changed');
         this._trigShipChanged = this.homey.flow.getTriggerCard('ship_changed');
         this._trigDepartureDateChanged = this.homey.flow.getTriggerCard('departure_date_changed');
@@ -214,6 +244,18 @@ class BookingDevice extends Homey.Device {
                     
                     this.log(`Time calculation: departureDate=${departureDate.toISOString()}, hoursRemaining=${hoursRemaining}`);
 
+                    // booking_status & stop polling logic
+                    if (this.hasCapability('booking_status')) {
+                        const status = hoursRemaining === 0 ? 'Departed' : 'Active';
+                        await this.setCapabilityValue('booking_status', status)
+                            .catch(err => this.error('Error setting booking_status:', err));
+                    }
+
+                    if (hoursRemaining === 0) {
+                        this.log('Sailing has departed (0 hours remaining). Stopping automatic polling.');
+                        this.stopPolling();
+                    }
+
                     // measure_time_remaining
                     if (this.hasCapability('measure_time_remaining')) {
                         await this.setCapabilityValue('measure_time_remaining', hoursRemaining)
@@ -280,6 +322,12 @@ class BookingDevice extends Homey.Device {
                     }
                     await this.setCapabilityValue('total_price', priceDisplay)
                         .catch(err => this.error('Error setting total_price:', err));
+                }
+
+                // ── Payment Status ───────────────────────────────────────
+                if (result.paymentStatus && this.hasCapability('payment_status')) {
+                    await this.setCapabilityValue('payment_status', result.paymentStatus)
+                        .catch(err => this.error('Error setting payment_status:', err));
                 }
 
                 // ── Cabin info (multiple cabins supported) ───────────────
@@ -379,6 +427,7 @@ class BookingDevice extends Homey.Device {
     async _checkAndFireTriggers(result, shipName) {
         const prev = this._previousValues;
         const currentHours = this.getCapabilityValue('measure_time_remaining');
+        const currentDays = this.getCapabilityValue('days_until_departure');
 
         // Build current departure string for comparison
         let currentDeparture = null;
@@ -395,6 +444,8 @@ class BookingDevice extends Homey.Device {
             }
         }
 
+        const currentPaymentStatus = result.paymentStatus || null;
+
         // ── Hours threshold triggers ────────────────────────────
         if (prev.hoursRemaining !== null && currentHours !== null) {
             const state = {
@@ -409,6 +460,36 @@ class BookingDevice extends Homey.Device {
             // hours_rose_above: pass state so registerRunListener can compare
             await this._trigHoursRoseAbove.trigger(this, {}, state)
                 .catch(err => this.error('Error triggering hours_rose_above:', err));
+        }
+
+        // ── Days threshold triggers ─────────────────────────────
+        if (prev.daysRemaining !== null && currentDays !== null) {
+            const state = {
+                previousDays: prev.daysRemaining,
+                currentDays: currentDays
+            };
+
+            await this._trigDaysDroppedBelow.trigger(this, {}, state)
+                .catch(err => this.error('Error triggering days_dropped_below:', err));
+
+            await this._trigDaysRoseAbove.trigger(this, {}, state)
+                .catch(err => this.error('Error triggering days_rose_above:', err));
+        }
+
+        // ── Sailing departed trigger ─────────────────────────────
+        if (prev.hoursRemaining !== null && prev.hoursRemaining > 0 && currentHours === 0) {
+            this.log('Sailing departed (crossed 0 hours threshold)!');
+            await this._trigSailingDeparted.trigger(this)
+                .catch(err => this.error('Error triggering sailing_departed:', err));
+        }
+
+        // ── Payment status changed trigger ───────────────────────
+        if (prev.paymentStatus !== null && currentPaymentStatus !== null && prev.paymentStatus !== currentPaymentStatus) {
+            this.log(`Payment status changed: "${prev.paymentStatus}" → "${currentPaymentStatus}"`);
+            await this._trigPaymentStatusChanged.trigger(this, {
+                old_status: prev.paymentStatus,
+                new_status: currentPaymentStatus
+            }).catch(err => this.error('Error triggering payment_status_changed:', err));
         }
 
         // ── Price changed trigger ───────────────────────────────
@@ -441,7 +522,9 @@ class BookingDevice extends Homey.Device {
         // Update previous values for next poll cycle
         this._previousValues = {
             hoursRemaining: currentHours,
+            daysRemaining: currentDays,
             totalPrice: currentPrice,
+            paymentStatus: currentPaymentStatus,
             shipName: shipName || prev.shipName,
             departureTime: currentDeparture || prev.departureTime
         };

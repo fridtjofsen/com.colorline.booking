@@ -1,0 +1,16 @@
+{
+  "name": {
+    "en": "Departure Countdown"
+  },
+  "height": "50%",
+  "devices": {
+    "type": "app",
+    "singular": true
+  },
+  "api": {
+    "getBookingData": {
+      "method": "GET",
+      "path": "/"
+    }
+  }
+}

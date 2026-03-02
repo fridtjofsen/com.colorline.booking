@@ -21,6 +21,6 @@
     "en": "Fixed a bug where booking data would stop refreshing after the first sync. Added a \"Refresh booking data\" flow action for on-demand updates. Improved resilience against Color Line site updates."
   },
   "0.1.7": {
-    "en": "Fixed a bug where booking data would stop refreshing after the first sync. Added a 'Refresh booking data' flow action for on-demand updates. Improved resilience against Color Line site updates."
+    "en": "Added departure countdown widget, days-based flow cards, booking status, and payment status tracking. Improved expired booking handling and re-authentication."
   }
 }
