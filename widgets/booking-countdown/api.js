@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  async getBookingData({ homey, query }) {
+  async getData({ homey, query }) {
     const driver = homey.drivers.getDriver('booking');
     if (!driver) {
       throw new Error('Driver not found');
@@ -40,6 +40,8 @@ module.exports = {
       route: device.getCapabilityValue('route'),
       booking_status: device.getCapabilityValue('booking_status'),
       arrival_time: device.getCapabilityValue('arrival_time'),
+      trip_type: device.getCapabilityValue('trip_type'),
+      return_arrival_time: device.getCapabilityValue('return_arrival_time'),
     };
   },
 };

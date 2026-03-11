@@ -2,13 +2,15 @@
   "name": {
     "en": "Departure Countdown"
   },
-  "height": "50%",
+  "height": 220,
+  "transparent": false,
   "devices": {
     "type": "app",
     "singular": true
   },
+  "settings": [],
   "api": {
-    "getBookingData": {
+    "getData": {
       "method": "GET",
       "path": "/"
     }

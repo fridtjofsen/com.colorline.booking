@@ -1,0 +1,26 @@
+{
+  "widgets": {
+    "booking-countdown": {
+      "loading": "Laden...",
+      "noDevice": "Geen apparaat geselecteerd",
+      "error": "Fout bij ophalen gegevens",
+      "status": "Status",
+      "nextSailing": "Volgende Afvaart",
+      "findingRoute": "Route zoeken...",
+      "locatingShip": "Schip zoeken...",
+      "gettingDeparture": "Vertrektijd ophalen...",
+      "unknownRoute": "Onbekende Route",
+      "departed": "Vertrokken",
+      "was": "Was: ",
+      "dep": "Vert: ",
+      "soon": "Binnenkort",
+      "days": "dagen",
+      "hours": "uur",
+      "ago": "geleden",
+      "daysHours": "dagen uren",
+      "hoursMinutes": "uren minuten",
+      "minutes": "minuten",
+      "untilDeparture": "tot vertrek"
+    }
+  }
+}

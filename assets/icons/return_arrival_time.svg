@@ -1,7 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <polyline points="9 3 3 3 3 9"/>
-  <path d="M3 3l7 7"/>
-  <path d="M21 13v4a4 4 0 0 1-4 4H7"/>
-  <polyline points="9 21 7 21"/>
-  <circle cx="12" cy="12" r="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
+  <path fill="currentColor" d="M20,21C18.61,21 17.22,20.53 16,19.68C14.78,20.53 13.39,21 12,21C10.61,21 9.22,20.53 8,19.68C6.78,20.53 5.39,21 4,21H2V19H4C5.38,19 6.74,18.65 8,18.01C10.52,19.3 13.48,19.3 16,18.01C17.26,18.65 18.62,19 20,19H22V21H20ZM3.95,17H4C5.6,17 7.02,16.12 8,15C8.98,16.12 10.4,17 12,17C13.6,17 15.02,16.12 16,15C16.98,16.12 18.4,17 20,17H20.05L21.94,10.32C22.02,10.06 22,9.78 21.88,9.54C21.76,9.3 21.54,9.14 21.28,9.06L20,8.93V4C20,2.9 19.1,2 18,2H15L10,3.37V0H8V2H9V7.18L4.16,9.5C3.9,9.58 3.68,9.76 3.56,10C3.44,10.26 3.42,10.54 3.5,10.78L3.95,17Z" />
+  <!-- Arrival Arrow Down Right -->
+  <path fill="currentColor" d="M14 8.5V6H9.41l4.22-4.22-1.41-1.41L8 4.59V2H6v6z" />
 </svg>

@@ -1,0 +1,26 @@
+{
+  "widgets": {
+    "booking-countdown": {
+      "loading": "Loading...",
+      "noDevice": "No device selected",
+      "error": "Error refreshing data",
+      "status": "Status",
+      "nextSailing": "Next Sailing",
+      "findingRoute": "Finding route...",
+      "locatingShip": "Locating ship...",
+      "gettingDeparture": "Getting departure time...",
+      "unknownRoute": "Unknown Route",
+      "departed": "Departed",
+      "was": "Was: ",
+      "dep": "Dep: ",
+      "soon": "Soon",
+      "days": "days",
+      "hours": "hours",
+      "ago": "ago",
+      "daysHours": "days hours",
+      "hoursMinutes": "hours minutes",
+      "minutes": "minutes",
+      "untilDeparture": "until departure"
+    }
+  }
+}

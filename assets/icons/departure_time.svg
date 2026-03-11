@@ -1,2 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4.026h2V7H2V4.026h2v-1H1V21h22V3.026h-3zM22 20H2V8.026h20zM7 4.026v-1h10v1zM5 2h1v3H5zm13 0h1v3h-1z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
+  <path fill="currentColor" d="M16 11.23V7.5c0-1.38-1.12-2.5-2.5-2.5H10.5V3H7v7H5.97l-1.85 6.47c-.06.27-.04.56.09.81s.38.44.66.52L6 18v2H4v2h16v-2h-3v-2l1.3-.39c.27-.08.49-.24.62-.48s.16-.54.1-.81L17.29 11l-1.29.23zM9 5h1v6l-1-.22V5zm6.5 12H7.93l-1.07-3.76L11 12.38v1.39l-2 .57v1.03l2.84-.81L14 13.91l.16 3.09zm.62-5.73l-3.12.56V9h1.5l1.62 2.27z"/>
+  <path fill="currentColor" d="M15 2l2 2-2 2v-1h-2v-2h2z"/>
+  <!-- Departure Arrow -->
+  <path fill="currentColor" d="M21 4.5l-3-3v2h-4v2h4v2z" />
+</svg>

@@ -1,123 +1,349 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="/homey.js" data-origin="manager"></script>
+    <link rel="stylesheet" href="https://apps-sdk.developer.homey.app/css/homey.widgets.css">
+    <script src="https://apps-sdk.developer.homey.app/js/homey.widgets.js"></script>
     <style>
-        body {
+        body, html {
             margin: 0;
-            padding: 16px;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: var(--homey-color-text);
-            background-color: transparent;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: var(--homey-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+            color: var(--homey-text-color);
+            box-sizing: border-box;
+            background: transparent;
+        }
+        
+        .view {
+            display: none;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: var(--homey-space-3, 16px);
+            box-sizing: border-box;
+        }
+
+        .view.is-visible {
+            display: flex;
+        }
+
+        /* Loading & Error */
+        .loading-text, .error-text {
+            color: var(--homey-text-color-light);
+            font-size: var(--homey-font-size-default, 14px);
+            text-align: center;
+        }
+        
+        .error-text {
+            color: var(--homey-text-color-danger, #ff5757);
+        }
+
+        /* Content Layout */
+        #view-content {
+            justify-content: space-between;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            font-size: var(--homey-font-size-small, 12px);
+            color: var(--homey-text-color-light);
+        }
+
+        .ship-info {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 500;
+            color: var(--homey-text-color);
+        }
+
+        .icon-small {
+            width: 12px;
+            height: 12px;
+            opacity: 0.7;
+        }
+
+        .custom-icon {
+            display: inline-block;
+            background-color: currentColor;
+            mask-size: contain;
+            -webkit-mask-size: contain;
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            mask-position: center;
+            -webkit-mask-position: center;
+        }
+
+        .icon-ship { mask-image: url('icons/ship_name.svg'); -webkit-mask-image: url('icons/ship_name.svg'); }
+        .icon-route { mask-image: url('icons/route.svg'); -webkit-mask-image: url('icons/route.svg'); }
+        .icon-dep { mask-image: url('icons/departure_time.svg'); -webkit-mask-image: url('icons/departure_time.svg'); }
+        .icon-arr { mask-image: url('icons/arrival_time.svg'); -webkit-mask-image: url('icons/arrival_time.svg'); }
+
+        .main {
+            text-align: center;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 100vh;
-            box-sizing: border-box;
+            width: 100%;
         }
-        .header {
-            font-size: 0.8em;
-            opacity: 0.6;
-            margin-bottom: 2px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+
         .route {
-            font-weight: 600;
-            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: var(--homey-font-size-default, 14px);
+            font-weight: 500;
+            margin-bottom: var(--homey-space-1, 8px);
+            color: var(--homey-text-color);
+            width: 100%;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .ship {
-            font-size: 0.9em;
-            opacity: 0.7;
-            margin-bottom: 8px;
+
+        .route svg, .route img, .route .custom-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.5;
+            flex-shrink: 0;
         }
+
         .countdown {
-            font-size: 2.5em;
-            font-weight: 700;
-            line-height: 1.0;
-            margin-bottom: 4px;
+            font-size: clamp(2rem, 15vmin, 3.5rem); 
+            font-weight: bold;
+            line-height: 1;
+            margin: 0;
+            color: var(--homey-text-color);
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
         }
-        .status {
-             font-size: 0.85em;
-             opacity: 0.8;
+
+        .countdown-label {
+            font-size: var(--homey-font-size-small, 12px);
+            color: var(--homey-text-color-light);
+            margin-top: 4px;
         }
-        .departed {
-            color: var(--homey-color-red);
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border-top: var(--homey-line);
+            padding-top: var(--homey-space-2, 8px);
         }
+
+        .time-block {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .time-block.right {
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .time-label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--homey-text-color-light);
+        }
+
+        .time-value {
+            font-size: var(--homey-font-size-small, 14px);
+            font-weight: 500;
+            color: var(--homey-text-color);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* States */
+        body.is-departed .countdown {
+            color: var(--homey-text-color-danger, #ff5757);
+            font-size: clamp(1.5rem, 12vmin, 2.5rem); 
+        }
+        
     </style>
 </head>
 <body>
-    <div id="content">Loading...</div>
+    <div id="view-loading" class="view is-visible">
+        <span class="loading-text" id="loading-msg">Loading...</span>
+    </div>
+
+    <div id="view-error" class="view">
+        <span class="error-text" id="error-msg">Error</span>
+    </div>
+
+    <div id="view-content" class="view">
+        <div class="header">
+            <span id="status-text">Next Sailing</span>
+            <div class="ship-info">
+                <span class="custom-icon icon-ship icon-small" aria-label="Ship"></span>
+                <span id="ship-name">--</span>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="route">
+                <span class="custom-icon icon-route" aria-label="Route"></span>
+                <span id="route-text">--</span>
+            </div>
+            <div class="countdown" id="countdown">--:--</div>
+            <div class="countdown-label" id="countdown-label">until departure</div>
+        </div>
+
+        <div class="footer">
+            <div class="time-block">
+                <div class="time-label">
+                    <span class="custom-icon icon-dep icon-small" aria-label="Dep"></span> Dep
+                </div>
+                <span class="time-value" id="dep-time">--:--</span>
+            </div>
+            <div class="time-block right">
+                <div class="time-label">
+                    Arr <span class="custom-icon icon-arr icon-small" aria-label="Arr"></span>
+                </div>
+                <span class="time-value" id="arr-time">--:--</span>
+            </div>
+        </div>
+    </div>
 
     <script type="text/javascript">
         function onHomeyReady(Homey) {
-            Homey.ready();
-            
-            async function update() {
-                try {
-                    // getDeviceIds() may return an array or an object keyed by ID
-                    const raw = await Homey.getDeviceIds();
-                    let ids = [];
-                    if (Array.isArray(raw)) {
-                        ids = raw;
-                    } else if (raw && typeof raw === 'object') {
-                        ids = Object.keys(raw);
-                    }
+            const __ = (key) => Homey.__(`widgets.booking-countdown.${key}`) ?? key;
+            const WIDGET_HEIGHT = 220; // Ensure it matches widget.compose.json
+            let isReadyCalled = false;
 
-                    if (ids.length === 0) {
-                        document.getElementById('content').innerText = 'No device selected';
-                        return;
-                    }
+            const views = {
+                loading: document.getElementById('view-loading'),
+                error: document.getElementById('view-error'),
+                content: document.getElementById('view-content')
+            };
 
-                    const deviceId = ids[0];
-                    const data = await Homey.api('GET', `/?deviceId=${deviceId}`);
-                    render(data);
-                } catch (err) {
-                    console.error(err);
-                    document.getElementById('content').innerText = 'Error refreshing data';
+            const els = {
+                loadingMsg: document.getElementById('loading-msg'),
+                errorMsg: document.getElementById('error-msg'),
+                status: document.getElementById('status-text'),
+                ship: document.getElementById('ship-name'),
+                route: document.getElementById('route-text'),
+                countdown: document.getElementById('countdown'),
+                label: document.getElementById('countdown-label'),
+                dep: document.getElementById('dep-time'),
+                arr: document.getElementById('arr-time')
+            };
+
+            els.loadingMsg.innerText = __('loading') || 'Loading...';
+
+            function _notifyReady() {
+                if (!isReadyCalled) {
+                    Homey.ready({ height: WIDGET_HEIGHT });
+                    isReadyCalled = true;
                 }
             }
 
-            function render(data) {
-                const content = document.getElementById('content');
-                
-                if (data.booking_status === 'Departed') {
-                    content.innerHTML = `
-                        <div class="header">Status</div>
-                        <div class="route">${data.route || 'Unknown Route'}</div>
-                        <div class="ship">${data.ship_name || ''}</div>
-                        <div class="countdown departed">Departed</div>
-                        <div class="status">Was: ${data.departure_time || '-'}</div>
-                    `;
-                    return;
-                }
+            function showView(viewName) {
+                Object.values(views).forEach(v => v.classList.remove('is-visible'));
+                views[viewName].classList.add('is-visible');
+            }
 
-                const days = data.days_until_departure;
-                const hours = data.measure_time_remaining;
-                
-                let timeStr = '';
-                if (hours > 48) {
-                    timeStr = `${Math.round(days)} days`;
-                } else if (hours > 0) {
-                    timeStr = `${hours} hours`;
-                } else {
-                    timeStr = 'Soon';
-                }
+            function showError(msg) {
+                els.errorMsg.innerText = msg;
+                showView('error');
+                _notifyReady();
+            }
 
-                content.innerHTML = `
-                    <div class="header">Next Sailing</div>
-                    <div class="route">${data.route || 'Unknown Route'}</div>
-                    <div class="ship">${data.ship_name || ''}</div>
-                    <div class="countdown">${timeStr}</div>
-                    <div class="status">Dep: ${data.departure_time || '-'}</div>
-                `;
+            function formatTimeRemaining(hoursTotal) {
+                if (hoursTotal < 0) return { value: __('departed'), label: '' };
+                
+                const absHours = Math.abs(hoursTotal);
+                const days = Math.floor(absHours / 24);
+                const hours = Math.floor(absHours % 24);
+                const minutes = Math.round((absHours % 1) * 60);
+                
+                if (days > 0) return { value: `${days}d ${hours}h`, label: __('daysHours') || 'days hours' };
+                if (hours > 0) return { value: `${hours}h ${minutes}m`, label: __('hoursMinutes') || 'hours minutes' };
+                return { value: `${minutes}m`, label: __('minutes') || 'minutes' };
+            }
+
+            function formatTime(val) {
+                if (!val) return '--:--';
+                if (/^\d{1,2}:\d{2}$/.test(val)) return val;
+                
+                try {
+                    const currentYear = new Date().getFullYear().toString();
+                    
+                    // The driver capability creates Norwegian human-readable strings like "onsdag 11. mars 2026 kl. 14:00"
+                    // We remove the current year to save space if it matches
+                    let cleaned = val.replace(` ${currentYear}`, '');
+                    
+                    // Remove the weekday (first word) to keep it compact
+                    cleaned = cleaned.replace(/^[a-zæøå]+\s+/i, ''); 
+                    
+                    // Remove " kl. " 
+                    cleaned = cleaned.replace(' kl. ', ' ');
+
+                    // Fallback to capitalizing first letter, e.g., "11. mars 14:00"
+                    return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
+                } catch(e) { 
+                    return val; 
+                }
+            }
+
+            async function update() {
+                try {
+                    const raw = await Homey.getDeviceIds();
+                    let ids = [];
+                    if (Array.isArray(raw)) ids = raw;
+                    else if (raw && typeof raw === 'object') ids = Object.keys(raw);
+
+                    if (ids.length === 0) {
+                        return showError(__('noDevice') || 'No device found');
+                    }
+
+                    const data = await Homey.api('GET', `/?deviceId=${ids[0]}`);
+                    
+                    els.ship.innerText = data.ship_name || '-';
+                    els.route.innerText = data.route || '-';
+                    
+                    els.dep.innerText = formatTime(data.departure_time);
+                    els.arr.innerText = formatTime(data.return_arrival_time || data.arrival_time);
+
+                    if (data.booking_status === 'Departed') {
+                        document.body.classList.add('is-departed');
+                        els.status.innerText = __('status') || 'Status';
+                        els.countdown.innerText = __('departed') || 'Departed';
+                        els.label.innerText = '';
+                    } else {
+                        document.body.classList.remove('is-departed');
+                        els.status.innerText = __('nextSailing') || 'Next Sailing';
+                        const timeData = formatTimeRemaining(data.measure_time_remaining);
+                        els.countdown.innerText = timeData.value;
+                        els.label.innerText = timeData.label;
+                    }
+
+                    showView('content');
+                    _notifyReady();
+                } catch (err) {
+                    console.error(err);
+                    showError(__('error') || 'Error loading data');
+                }
             }
 
             update();
-            setInterval(update, 60000); // Update every minute
+            setInterval(update, 60000); 
         }
     </script>
 </body>

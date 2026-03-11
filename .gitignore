@@ -2,3 +2,6 @@ node_modules/
 .homeybuild/
 .env
 *.log
+test_*.js
+coverage/
+dist/
