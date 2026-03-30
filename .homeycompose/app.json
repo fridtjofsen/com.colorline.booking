@@ -15,6 +15,13 @@
   "category": [
     "internet"
   ],
+  "tags": {
+    "en": [
+      "color line",
+      "color booking",
+      "colorline"
+    ]
+  },
   "brandColor": "#002B5C",
   "images": {
     "small": "/assets/images/small.png",
@@ -24,5 +31,14 @@
   "author": {
     "name": "Steffen Fridtjofsen",
     "email": "s@j7.no"
-  }
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "steffenoppdal"
+      }
+    }
+  },
+  "support": "mailto:s@j7.no",
+  "homeyCommunityTopicId": 150405
 }
