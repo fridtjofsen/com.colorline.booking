@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Cabins"
+    "en": "Cabins",
+    "nl": "Cabines",
+    "da": "Hytter",
+    "de": "Kabinen",
+    "es": "Cabañas",
+    "fr": "Cabines",
+    "it": "Cabine",
+    "no": "Hytter",
+    "sv": "Stugor",
+    "pl": "Kabiny",
+    "ko": "캐빈"
   },
   "getable": true,
   "setable": false,

@@ -1,26 +1,48 @@
 {
   "id": "com.colorline.booking",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "compatibility": ">=12.3.0",
   "sdk": 3,
-  "platforms": [
-    "local"
-  ],
+  "platforms": ["local"],
   "name": {
-    "en": "Color Line Booking"
+    "en": "Color Line Booking",
+    "nl": "Color Line Boeking",
+    "da": "Color Line Booking",
+    "de": "Color Line Buchung",
+    "es": "Reserva de Color Line",
+    "fr": "Réservation Color Line",
+    "it": "Prenotazione Color Line",
+    "no": "Color Line Booking",
+    "sv": "Color Line Bokning",
+    "pl": "Rezerwacja Color Line",
+    "ko": "컬러 라인 예약"
   },
   "description": {
-    "en": "Track your next sailing"
+    "en": "Track your next sailing",
+    "nl": "Volg uw volgende vaart",
+    "da": "Spor din næste sejlads",
+    "de": "Verfolgen Sie Ihre nächste Fahrt",
+    "es": "Sigue tu próximo viaje",
+    "fr": "Suivez votre prochaine navigation",
+    "it": "Monitora la tua prossima navigazione",
+    "no": "Følg din neste seiling",
+    "sv": "Spåra din nästa segling",
+    "pl": "Śledź swoją następną żeglugę",
+    "ko": "다음 항해를 추적하세요"
   },
-  "category": [
-    "internet"
-  ],
+  "category": ["internet"],
   "tags": {
-    "en": [
-      "color line",
-      "color booking",
-      "colorline"
-    ]
+    "en": ["color line", "color booking", "colorline"],
+    "nl": ["color line", "color boeking", "colorline"],
+    "da": ["color line", "color booking", "colorline"],
+    "de": ["color line", "color buchung", "colorline"],
+    "es": ["color line", "reserva", "colorline"],
+    "fr": ["color line", "réservation", "colorline"],
+    "it": ["color line", "prenotazione", "colorline"],
+    "no": ["color line", "booking", "colorline"],
+    "sv": ["color line", "bokning", "colorline"],
+    "pl": ["color line", "rezerwacja", "colorline"],
+    "ko": ["color line", "예약", "colorline"]
   },
   "brandColor": "#002B5C",
   "images": {
@@ -35,7 +57,7 @@
   "contributing": {
     "donate": {
       "paypal": {
-        "username": "steffenoppdal"
+        "username": "fridtjofsen"
       }
     }
   },

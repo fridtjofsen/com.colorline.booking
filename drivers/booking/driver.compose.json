@@ -1,6 +1,16 @@
 {
   "name": {
-    "en": "Color Line Booking"
+    "en": "Color Line Booking",
+    "nl": "Kleurlijn Boeking",
+    "da": "Farvelinje Booking",
+    "de": "Color Line Buchung",
+    "es": "Reserva de Color Line",
+    "fr": "Réservation Color Line",
+    "it": "Prenotazione Color Line",
+    "no": "Color Line Bestilling",
+    "sv": "Color Line Bokning",
+    "pl": "Rezerwacja Color Line",
+    "ko": "컬러 라인 예약"
   },
   "class": "other",
   "capabilities": [
@@ -25,7 +35,17 @@
   "capabilitiesOptions": {
     "measure_time_remaining": {
       "title": {
-        "en": "Hours until departure"
+        "en": "Hours until departure",
+        "nl": "Uren tot vertrek",
+        "da": "Timer til afgang",
+        "de": "Stunden bis zur Abfahrt",
+        "es": "Horas hasta la salida",
+        "fr": "Heures avant le départ",
+        "it": "Ore fino alla partenza",
+        "no": "Timer til avgang",
+        "sv": "Timmar till avfärd",
+        "pl": "Godziny do odjazdu",
+        "ko": "출발까지 남은 시간"
       }
     }
   },
@@ -40,16 +60,56 @@
       "template": "login_credentials",
       "options": {
         "title": {
-          "en": "Find Booking"
+          "en": "Find Booking",
+          "nl": "Zoek Boeking",
+          "da": "Find Booking",
+          "de": "Buchung finden",
+          "es": "Encontrar Reserva",
+          "fr": "Trouver la Réservation",
+          "it": "Trova Prenotazione",
+          "no": "Finn Bestilling",
+          "sv": "Hitta Bokning",
+          "pl": "Znajdź Rezerwację",
+          "ko": "예약 찾기"
         },
         "usernameLabel": {
-          "en": "Last Name"
+          "en": "Last Name",
+          "nl": "Achternaam",
+          "da": "Efternavn",
+          "de": "Nachname",
+          "es": "Apellido",
+          "fr": "Nom de Famille",
+          "it": "Cognome",
+          "no": "Etternavn",
+          "sv": "Efternamn",
+          "pl": "Nazwisko",
+          "ko": "성"
         },
         "passwordLabel": {
-          "en": "Booking Number"
+          "en": "Booking Number",
+          "nl": "Boekingsnummer",
+          "da": "Bookingnummer",
+          "de": "Buchungsnummer",
+          "es": "Número de Reserva",
+          "fr": "Numéro de Réservation",
+          "it": "Numero di Prenotazione",
+          "no": "Bestillingsnummer",
+          "sv": "Bokningsnummer",
+          "pl": "Numer rezerwacji",
+          "ko": "예약 번호"
         },
         "hint": {
-          "en": "Enter your Last Name and Booking Number (not password) to track a specific booking."
+          "en": "Enter your Last Name and Booking Number (not password) to track a specific booking.",
+          "nl": "Voer uw achternaam en boekingsnummer in (geen wachtwoord) om een specifieke boeking te volgen.",
+          "da": "Indtast dit efternavn og bookingnummer (ikke adgangskode) for at spore en specifik booking.",
+          "de": "Geben Sie Ihren Nachnamen und die Buchungsnummer (nicht das Passwort) ein, um eine bestimmte Buchung zu verfolgen.",
+          "es": "Ingrese su apellido y número de reserva (no contraseña) para rastrear una reserva específica.",
+          "fr": "Entrez votre nom de famille et votre numéro de réservation (pas de mot de passe) pour suivre une réservation spécifique.",
+          "it": "Inserisci il tuo cognome e il numero di prenotazione (non la password) per tracciare una prenotazione specifica.",
+          "no": "Skriv inn etternavnet ditt og bestillingsnummeret (ikke passord) for å spore en spesifikk bestilling.",
+          "sv": "Ange ditt efternamn och bokningsnummer (inte lösenord) för att spåra en specifik bokning.",
+          "pl": "Wprowadź swoje nazwisko i numer rezerwacji (nie hasło), aby śledzić konkretną rezerwację.",
+          "ko": "특정 예약을 추적하려면 성과 예약 번호(비밀번호 아님)를 입력하세요."
         }
       }
     },
@@ -70,7 +130,17 @@
       "id": "polling_interval",
       "type": "number",
       "label": {
-        "en": "Polling Interval (minutes)"
+        "en": "Polling Interval (minutes)",
+        "nl": "Polling Interval (minuten)",
+        "da": "Polling Interval (minutter)",
+        "de": "Abfrageintervall (Minuten)",
+        "es": "Intervalo de Sondeo (minutos)",
+        "fr": "Intervalle de Sondage (minutes)",
+        "it": "Intervallo di Polling (minuti)",
+        "no": "Polling Intervall (minutter)",
+        "sv": "Pollingintervall (minuter)",
+        "pl": "Interwał Pollingu (minuty)",
+        "ko": "폴링 간격 (분)"
       },
       "value": 60,
       "min": 15,
@@ -80,20 +150,60 @@
       "id": "lastName",
       "type": "text",
       "label": {
-        "en": "Last Name"
+        "en": "Last Name",
+        "nl": "Achternaam",
+        "da": "Efternavn",
+        "de": "Nachname",
+        "es": "Apellido",
+        "fr": "Nom de Famille",
+        "it": "Cognome",
+        "no": "Etternavn",
+        "sv": "Efternamn",
+        "pl": "Nazwisko",
+        "ko": "성"
       },
       "hint": {
-        "en": "Last name on the booking"
+        "en": "Last name on the booking",
+        "nl": "Achternaam op de boeking",
+        "da": "Efternavn på booking",
+        "de": "Nachname auf der Buchung",
+        "es": "Apellido en la reserva",
+        "fr": "Nom de famille sur la réservation",
+        "it": "Cognome sulla prenotazione",
+        "no": "Etternavn på bestillingen",
+        "sv": "Efternamn på bokningen",
+        "pl": "Nazwisko w rezerwacji",
+        "ko": "예약의 성"
       }
     },
     {
       "id": "bookingReference",
       "type": "text",
       "label": {
-        "en": "Booking Number"
+        "en": "Booking Number",
+        "nl": "Boekingsnummer",
+        "da": "Bookingnummer",
+        "de": "Buchungsnummer",
+        "es": "Número de Reserva",
+        "fr": "Numéro de Réservation",
+        "it": "Numero di Prenotazione",
+        "no": "Bestillingsnummer",
+        "sv": "Bokningsnummer",
+        "pl": "Numer rezerwacji",
+        "ko": "예약 번호"
       },
       "hint": {
-        "en": "Your booking reference number"
+        "en": "Your booking reference number",
+        "nl": "Uw boekingsreferentienummer",
+        "da": "Dit bookingreferencenummer",
+        "de": "Ihre Buchungsreferenznummer",
+        "es": "Su número de referencia de reserva",
+        "fr": "Votre numéro de référence de réservation",
+        "it": "Il tuo numero di riferimento della prenotazione",
+        "no": "Ditt bestillingsreferansenummer",
+        "sv": "Ditt bokningsreferensnummer",
+        "pl": "Twój numer referencyjny rezerwacji",
+        "ko": "귀하의 예약 참조 번호"
       }
     }
   ]

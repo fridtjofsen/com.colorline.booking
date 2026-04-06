@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Arrival Time"
+    "en": "Arrival Time",
+    "nl": "Aankomsttijd",
+    "da": "Ankomsttid",
+    "de": "Ankunftszeit",
+    "es": "Hora de llegada",
+    "fr": "Heure d'arrivée",
+    "it": "Orario di arrivo",
+    "no": "Ankomsttid",
+    "sv": "Ankomsttid",
+    "pl": "Czas przybycia",
+    "ko": "도착 시간"
   },
   "getable": true,
   "setable": false,

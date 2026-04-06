@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Return Departure"
+    "en": "Return Departure",
+    "nl": "Retour Vertrek",
+    "da": "Returafgang",
+    "de": "Rückkehr Abfahrt",
+    "es": "Salida de Regreso",
+    "fr": "Départ de Retour",
+    "it": "Partenza di Ritorno",
+    "no": "Returavgang",
+    "sv": "Returavfärd",
+    "pl": "Powrót",
+    "ko": "귀환 출발"
   },
   "getable": true,
   "setable": false,

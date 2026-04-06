@@ -1,0 +1,26 @@
+{
+  "widgets": {
+    "booking-countdown": {
+      "loading": "Ładowanie...",
+      "noDevice": "Nie wybrano urządzenia",
+      "error": "Błąd podczas odświeżania danych",
+      "status": "Status",
+      "nextSailing": "Następny rejs",
+      "findingRoute": "Znajdowanie trasy...",
+      "locatingShip": "Lokalizowanie statku...",
+      "gettingDeparture": "Pobieranie czasu odlotu...",
+      "unknownRoute": "Nieznana trasa",
+      "departed": "Odpłynął",
+      "was": "Był: ",
+      "dep": "Odp: ",
+      "soon": "Wkrótce",
+      "days": "dni",
+      "hours": "godzin",
+      "ago": "temu",
+      "daysHours": "dni godzin",
+      "hoursMinutes": "godzin minut",
+      "minutes": "minut",
+      "untilDeparture": "do odlotu"
+    }
+  }
+}

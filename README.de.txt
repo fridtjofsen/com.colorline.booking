@@ -1,0 +1,3 @@
+Behalten Sie Ihre bevorstehende Color Line-Kreuzfahrt direkt von Homey aus im Auge. Color Line Booking ruft automatisch Ihre Buchungsdetails ab und hält alles auf dem neuesten Stand, sodass Sie immer genau wissen, wann Ihre nächste Abfahrt ist.
+
+Verwenden Sie es in Ihren Flows, um Automatisierungen basierend auf der verbleibenden Zeit bis zur Abfahrt auszulösen oder auf Änderungen in Ihrem Reiseverlauf zu reagieren. Geben Sie einfach Ihren Nachnamen und Ihre Buchungsnummer während der Einrichtung ein, und alle Ihre Buchungsdaten sind in Homey verfügbar.

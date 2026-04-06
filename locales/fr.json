@@ -1,0 +1,26 @@
+{
+  "widgets": {
+    "booking-countdown": {
+      "loading": "Chargement...",
+      "noDevice": "Aucun appareil sélectionné",
+      "error": "Erreur lors de la mise à jour des données",
+      "status": "Statut",
+      "nextSailing": "Prochain départ",
+      "findingRoute": "Recherche d'itinéraire...",
+      "locatingShip": "Localisation du navire...",
+      "gettingDeparture": "Obtention de l'heure de départ...",
+      "unknownRoute": "Itinéraire inconnu",
+      "departed": "Parti",
+      "was": "Était : ",
+      "dep": "Départ : ",
+      "soon": "Bientôt",
+      "days": "jours",
+      "hours": "heures",
+      "ago": "il y a",
+      "daysHours": "jours heures",
+      "hoursMinutes": "heures minutes",
+      "minutes": "minutes",
+      "untilDeparture": "jusqu'au départ"
+    }
+  }
+}

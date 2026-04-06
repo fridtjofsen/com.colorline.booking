@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Booking Status"
+    "en": "Booking Status",
+    "nl": "Boekingsstatus",
+    "da": "Bookingstatus",
+    "de": "Buchungsstatus",
+    "es": "Estado de la reserva",
+    "fr": "Statut de réservation",
+    "it": "Stato della prenotazione",
+    "no": "Bestillingsstatus",
+    "sv": "Bokningsstatus",
+    "pl": "Status rezerwacji",
+    "ko": "예약 상태"
   },
   "getable": true,
   "setable": false,

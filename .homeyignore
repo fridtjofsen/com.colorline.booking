@@ -1,8 +1,12 @@
 node_modules/
 .homeybuild/
+.opencode/
+.vscode/
 .env
 *.log
 test_*.js
 coverage/
 dist/
-.translate.js
+README*
+package-lock.json
+assets/unused/

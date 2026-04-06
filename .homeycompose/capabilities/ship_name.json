@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Ship"
+    "en": "Ship",
+    "nl": "Schip",
+    "da": "Skib",
+    "de": "Schiff",
+    "es": "Barco",
+    "fr": "Bateau",
+    "it": "Nave",
+    "no": "Skip",
+    "sv": "Fartyg",
+    "pl": "Statek",
+    "ko": "배"
   },
   "getable": true,
   "setable": false,

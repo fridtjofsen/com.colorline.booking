@@ -1,0 +1,26 @@
+{
+  "widgets": {
+    "booking-countdown": {
+      "loading": "Indlæser...",
+      "noDevice": "Ingen enhed valgt",
+      "error": "Fejl ved opdatering af data",
+      "status": "Status",
+      "nextSailing": "Næste sejlads",
+      "findingRoute": "Finder rute...",
+      "locatingShip": "Lokaliserer skib...",
+      "gettingDeparture": "Henter afgangstid...",
+      "unknownRoute": "Ukendt rute",
+      "departed": "Afgået",
+      "was": "Var: ",
+      "dep": "Afg: ",
+      "soon": "Snart",
+      "days": "dage",
+      "hours": "timer",
+      "ago": "siden",
+      "daysHours": "dage timer",
+      "hoursMinutes": "timer minutter",
+      "minutes": "minutter",
+      "untilDeparture": "indtil afgang"
+    }
+  }
+}

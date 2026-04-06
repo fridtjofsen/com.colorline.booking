@@ -1,0 +1,26 @@
+{
+  "widgets": {
+    "booking-countdown": {
+      "loading": "Laster...",
+      "noDevice": "Ingen enhet valgt",
+      "error": "Feil ved oppdatering av data",
+      "status": "Status",
+      "nextSailing": "Neste avgang",
+      "findingRoute": "Finner rute...",
+      "locatingShip": "Lokaliserer skip...",
+      "gettingDeparture": "Henter avgangstid...",
+      "unknownRoute": "Ukjent rute",
+      "departed": "Avgang",
+      "was": "Var: ",
+      "dep": "Avg: ",
+      "soon": "Snart",
+      "days": "dager",
+      "hours": "timer",
+      "ago": "siden",
+      "daysHours": "dager timer",
+      "hoursMinutes": "timer minutter",
+      "minutes": "minutter",
+      "untilDeparture": "til avgang"
+    }
+  }
+}

@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Total Price"
+    "en": "Total Price",
+    "nl": "Totale Prijs",
+    "da": "Total Pris",
+    "de": "Gesamtpreis",
+    "es": "Precio Total",
+    "fr": "Prix Total",
+    "it": "Prezzo Totale",
+    "no": "Totalpris",
+    "sv": "Totalt Pris",
+    "pl": "Całkowita Cena",
+    "ko": "총 가격"
   },
   "getable": true,
   "setable": false,

@@ -1,0 +1,26 @@
+{
+  "widgets": {
+    "booking-countdown": {
+      "loading": "로딩 중...",
+      "noDevice": "선택된 장치가 없습니다",
+      "error": "데이터 새로 고침 오류",
+      "status": "상태",
+      "nextSailing": "다음 항해",
+      "findingRoute": "경로 찾는 중...",
+      "locatingShip": "선박 위치 찾는 중...",
+      "gettingDeparture": "출발 시간 가져오는 중...",
+      "unknownRoute": "알 수 없는 경로",
+      "departed": "출발함",
+      "was": "이전: ",
+      "dep": "출발: ",
+      "soon": "곧",
+      "days": "일",
+      "hours": "시간",
+      "ago": "전",
+      "daysHours": "일 시간",
+      "hoursMinutes": "시간 분",
+      "minutes": "분",
+      "untilDeparture": "출발까지"
+    }
+  }
+}

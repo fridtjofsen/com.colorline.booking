@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Booking Reference"
+    "en": "Booking Reference",
+    "nl": "Boekingsreferentie",
+    "da": "Booking Reference",
+    "de": "Buchungsreferenz",
+    "es": "Referencia de Reserva",
+    "fr": "Référence de Réservation",
+    "it": "Riferimento Prenotazione",
+    "no": "Bestillingsreferanse",
+    "sv": "Bokningsreferens",
+    "pl": "Referencja rezerwacji",
+    "ko": "예약 참조"
   },
   "getable": true,
   "setable": false,

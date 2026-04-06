@@ -1,0 +1,3 @@
+Houd je aanstaande Color Line cruise rechtstreeks vanuit Homey in de gaten. Color Line Booking haalt automatisch je boekingsgegevens op en houdt alles bijgewerkt, zodat je altijd precies weet wanneer je volgende vertrek is.
+
+Gebruik het in je flows om automatiseringen te activeren op basis van de resterende tijd tot vertrek, of reageer op wijzigingen in je reisplan. Voer gewoon je achternaam en boekingsnummer in tijdens de installatie, en al je boekingsgegevens zijn beschikbaar in heel Homey.

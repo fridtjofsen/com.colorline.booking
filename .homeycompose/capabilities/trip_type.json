@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Trip Type"
+    "en": "Trip Type",
+    "nl": "Reistype",
+    "da": "Rejsetype",
+    "de": "Reiseart",
+    "es": "Tipo de viaje",
+    "fr": "Type de voyage",
+    "it": "Tipo di viaggio",
+    "no": "Reisetype",
+    "sv": "Resetyp",
+    "pl": "Typ podróży",
+    "ko": "여행 유형"
   },
   "getable": true,
   "setable": false,

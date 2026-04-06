@@ -1,0 +1,3 @@
+Śledź swoje nadchodzące rejsy Color Line bezpośrednio z Homey. Color Line Booking automatycznie pobiera szczegóły twojej rezerwacji i na bieżąco aktualizuje wszystko, dzięki czemu zawsze wiesz, kiedy jest twój następny rejs.
+
+Użyj go w swoich przepływach, aby uruchamiać automatyzacje w oparciu o czas pozostały do odjazdu lub reagować na zmiany w swoim planie podróży. Wystarczy, że podczas konfiguracji wpiszesz swoje nazwisko i numer rezerwacji, a wszystkie dane dotyczące rezerwacji będą dostępne w całym Homey.

@@ -1,6 +1,16 @@
 {
   "name": {
-    "en": "Departure Countdown"
+    "en": "Departure Countdown",
+    "nl": "Vertrek Aftelling",
+    "da": "Afgang Nedtælling",
+    "de": "Abfahrtscountdown",
+    "es": "Cuenta Regresiva de Salida",
+    "fr": "Compte à Rebours de Départ",
+    "it": "Conto alla Rovescia della Partenza",
+    "no": "Avgangsnedtelling",
+    "sv": "Nedräkning till Avresa",
+    "pl": "Odwrotne Odliczanie do Odjazdu",
+    "ko": "출발 카운트다운"
   },
   "height": 220,
   "transparent": false,

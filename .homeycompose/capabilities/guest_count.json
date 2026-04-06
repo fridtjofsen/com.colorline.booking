@@ -1,7 +1,17 @@
 {
   "type": "number",
   "title": {
-    "en": "Guests"
+    "en": "Guests",
+    "nl": "Gasten",
+    "da": "Gæster",
+    "de": "Gäste",
+    "es": "Invitados",
+    "fr": "Invités",
+    "it": "Ospiti",
+    "no": "Gjestene",
+    "sv": "Gäster",
+    "pl": "Goście",
+    "ko": "손님"
   },
   "getable": true,
   "setable": false,

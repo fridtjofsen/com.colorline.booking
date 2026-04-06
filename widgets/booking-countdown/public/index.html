@@ -15,7 +15,7 @@
             box-sizing: border-box;
             background: transparent;
         }
-        
+
         .view {
             display: none;
             width: 100%;
@@ -37,7 +37,7 @@
             font-size: var(--homey-font-size-default, 14px);
             text-align: center;
         }
-        
+
         .error-text {
             color: var(--homey-text-color-danger, #ff5757);
         }
@@ -118,7 +118,7 @@
         }
 
         .countdown {
-            font-size: clamp(2rem, 15vmin, 3.5rem); 
+            font-size: clamp(2rem, 15vmin, 3.5rem);
             font-weight: bold;
             line-height: 1;
             margin: 0;
@@ -173,9 +173,9 @@
         /* States */
         body.is-departed .countdown {
             color: var(--homey-text-color-danger, #ff5757);
-            font-size: clamp(1.5rem, 12vmin, 2.5rem); 
+            font-size: clamp(1.5rem, 12vmin, 2.5rem);
         }
-        
+
     </style>
 </head>
 <body>
@@ -225,7 +225,9 @@
         function onHomeyReady(Homey) {
             const __ = (key) => Homey.__(`widgets.booking-countdown.${key}`) ?? key;
             const WIDGET_HEIGHT = 220; // Ensure it matches widget.compose.json
+            const REFRESH_INTERVAL_MS = 300000;
             let isReadyCalled = false;
+            let cachedDeviceIds = null;
 
             const views = {
                 loading: document.getElementById('view-loading'),
@@ -267,12 +269,12 @@
 
             function formatTimeRemaining(hoursTotal) {
                 if (hoursTotal < 0) return { value: __('departed'), label: '' };
-                
+
                 const absHours = Math.abs(hoursTotal);
                 const days = Math.floor(absHours / 24);
                 const hours = Math.floor(absHours % 24);
                 const minutes = Math.round((absHours % 1) * 60);
-                
+
                 if (days > 0) return { value: `${days}d ${hours}h`, label: __('daysHours') || 'days hours' };
                 if (hours > 0) return { value: `${hours}h ${minutes}m`, label: __('hoursMinutes') || 'hours minutes' };
                 return { value: `${minutes}m`, label: __('minutes') || 'minutes' };
@@ -281,43 +283,54 @@
             function formatTime(val) {
                 if (!val) return '--:--';
                 if (/^\d{1,2}:\d{2}$/.test(val)) return val;
-                
+
                 try {
                     const currentYear = new Date().getFullYear().toString();
-                    
+
                     // The driver capability creates Norwegian human-readable strings like "onsdag 11. mars 2026 kl. 14:00"
                     // We remove the current year to save space if it matches
                     let cleaned = val.replace(` ${currentYear}`, '');
-                    
+
                     // Remove the weekday (first word) to keep it compact
-                    cleaned = cleaned.replace(/^[a-zæøå]+\s+/i, ''); 
-                    
-                    // Remove " kl. " 
+                    cleaned = cleaned.replace(/^[a-zæøå]+\s+/i, '');
+
+                    // Remove " kl. "
                     cleaned = cleaned.replace(' kl. ', ' ');
 
                     // Fallback to capitalizing first letter, e.g., "11. mars 14:00"
                     return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
-                } catch(e) { 
-                    return val; 
+                } catch(e) {
+                    return val;
                 }
+            }
+
+            async function getDeviceIds() {
+                if (cachedDeviceIds) {
+                    return cachedDeviceIds;
+                }
+
+                const raw = await Homey.getDeviceIds();
+                let ids = [];
+                if (Array.isArray(raw)) ids = raw;
+                else if (raw && typeof raw === 'object') ids = Object.keys(raw);
+
+                cachedDeviceIds = ids;
+                return ids;
             }
 
             async function update() {
                 try {
-                    const raw = await Homey.getDeviceIds();
-                    let ids = [];
-                    if (Array.isArray(raw)) ids = raw;
-                    else if (raw && typeof raw === 'object') ids = Object.keys(raw);
+                    const ids = await getDeviceIds();
 
                     if (ids.length === 0) {
                         return showError(__('noDevice') || 'No device found');
                     }
 
                     const data = await Homey.api('GET', `/?deviceId=${ids[0]}`);
-                    
+
                     els.ship.innerText = data.ship_name || '-';
                     els.route.innerText = data.route || '-';
-                    
+
                     els.dep.innerText = formatTime(data.departure_time);
                     els.arr.innerText = formatTime(data.return_arrival_time || data.arrival_time);
 
@@ -343,7 +356,7 @@
             }
 
             update();
-            setInterval(update, 60000); 
+            setInterval(update, REFRESH_INTERVAL_MS);
         }
     </script>
 </body>

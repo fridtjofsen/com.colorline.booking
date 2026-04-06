@@ -1,0 +1,3 @@
+Suivez votre prochaine croisière Color Line directement depuis Homey. Color Line Booking récupère automatiquement les détails de votre réservation et maintient tout à jour afin que vous sachiez toujours exactement quand votre prochain départ est prévu.
+
+Utilisez-le dans vos flux pour déclencher des automatisations en fonction du temps restant avant le départ, ou réagissez aux changements dans votre itinéraire de voyage. Il vous suffit d'entrer votre nom de famille et votre numéro de réservation lors de la configuration, et toutes vos données de réservation sont disponibles dans tout Homey.

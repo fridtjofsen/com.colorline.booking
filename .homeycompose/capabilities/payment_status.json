@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Payment Status"
+    "en": "Payment Status",
+    "nl": "Betalingsstatus",
+    "da": "Betalingsstatus",
+    "de": "Zahlungsstatus",
+    "es": "Estado de Pago",
+    "fr": "État du Paiement",
+    "it": "Stato del Pagamento",
+    "no": "Betalingsstatus",
+    "sv": "Betalningsstatus",
+    "pl": "Status Płatności",
+    "ko": "결제 상태"
   },
   "getable": true,
   "setable": false,

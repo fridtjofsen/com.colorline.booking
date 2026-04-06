@@ -1,14 +1,34 @@
 {
   "type": "number",
   "title": {
-    "en": "Hours until departure"
+    "en": "Hours until departure",
+    "nl": "Uren tot vertrek",
+    "da": "Timer indtil afgang",
+    "de": "Stunden bis zur Abfahrt",
+    "es": "Horas hasta la salida",
+    "fr": "Heures jusqu'au départ",
+    "it": "Ore fino alla partenza",
+    "no": "Timer til avgang",
+    "sv": "Timmar till avfärd",
+    "pl": "Godziny do odjazdu",
+    "ko": "출발까지 남은 시간"
   },
   "units": {
-    "en": "h"
+    "en": "h",
+    "nl": "u",
+    "da": "t",
+    "de": "h",
+    "es": "h",
+    "fr": "h",
+    "it": "h",
+    "no": "t",
+    "sv": "h",
+    "pl": "g",
+    "ko": "시"
   },
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",
-  "insights": true,
+  "insights": false,
   "icon": "/assets/icons/measure_time_remaining.svg"
 }

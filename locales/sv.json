@@ -1,0 +1,26 @@
+{
+  "widgets": {
+    "booking-countdown": {
+      "loading": "Laddar...",
+      "noDevice": "Ingen enhet vald",
+      "error": "Fel vid uppdatering av data",
+      "status": "Status",
+      "nextSailing": "Nästa avgång",
+      "findingRoute": "Hittar rutt...",
+      "locatingShip": "Lokaliserar fartyg...",
+      "gettingDeparture": "Hämtar avgångstid...",
+      "unknownRoute": "Okänd rutt",
+      "departed": "Avgått",
+      "was": "Var: ",
+      "dep": "Avg: ",
+      "soon": "Snart",
+      "days": "dagar",
+      "hours": "timmar",
+      "ago": "sedan",
+      "daysHours": "dagar timmar",
+      "hoursMinutes": "timmar minuter",
+      "minutes": "minuter",
+      "untilDeparture": "till avgång"
+    }
+  }
+}

@@ -1,0 +1,3 @@
+Hold styr på din kommende Color Line-krydstogt direkte fra Homey. Color Line Booking henter automatisk dine bookingoplysninger og holder alt opdateret, så du altid ved præcist, hvornår din næste sejlads er.
+
+Brug det i dine flows til at udløse automatiseringer baseret på den tid, der er tilbage til afgang, eller reager på ændringer i din rejseplan. Indtast blot dit efternavn og bookingsnummer under opsætningen, og alle dine bookingdata er tilgængelige i hele Homey.

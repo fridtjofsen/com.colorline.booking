@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Trip Duration"
+    "en": "Trip Duration",
+    "nl": "Reisduur",
+    "da": "Rejsetid",
+    "de": "Reisedauer",
+    "es": "Duración del viaje",
+    "fr": "Durée du voyage",
+    "it": "Durata del viaggio",
+    "no": "Reisetid",
+    "sv": "Reslängd",
+    "pl": "Czas podróży",
+    "ko": "여행 시간"
   },
   "getable": true,
   "setable": false,

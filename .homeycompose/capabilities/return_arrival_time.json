@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Return Arrival"
+    "en": "Return Arrival",
+    "nl": "Retour Aankomst",
+    "da": "Retur Ankomst",
+    "de": "Rückkehr Ankunft",
+    "es": "Llegada de Devolución",
+    "fr": "Retour Arrivée",
+    "it": "Ritorno Arrivo",
+    "no": "Retur Ankomst",
+    "sv": "Retur Ankomst",
+    "pl": "Powrót Przybycia",
+    "ko": "반품 도착"
   },
   "getable": true,
   "setable": false,

@@ -1,0 +1,3 @@
+Håll koll på din kommande Color Line-kryssning direkt från Homey. Color Line Bokning hämtar automatiskt dina bokningsdetaljer och håller allt uppdaterat så att du alltid vet exakt när din nästa avgång är.
+
+Använd den i dina flöden för att utlösa automationer baserat på tiden som återstår till avresa, eller reagera på förändringar i din reseplan. Ange bara ditt efternamn och bokningsnummer under installationen, så är all din bokningsdata tillgänglig genom hela Homey.

@@ -1,17 +1,37 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.colorline.booking",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "compatibility": ">=12.3.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Color Line Booking"
+    "en": "Color Line Booking",
+    "nl": "Color Line Boeking",
+    "da": "Color Line Booking",
+    "de": "Color Line Buchung",
+    "es": "Reserva de Color Line",
+    "fr": "Réservation Color Line",
+    "it": "Prenotazione Color Line",
+    "no": "Color Line Booking",
+    "sv": "Color Line Bokning",
+    "pl": "Rezerwacja Color Line",
+    "ko": "컬러 라인 예약"
   },
   "description": {
-    "en": "Track your next sailing"
+    "en": "Track your next sailing",
+    "nl": "Volg uw volgende vaart",
+    "da": "Spor din næste sejlads",
+    "de": "Verfolgen Sie Ihre nächste Fahrt",
+    "es": "Sigue tu próximo viaje",
+    "fr": "Suivez votre prochaine navigation",
+    "it": "Monitora la tua prossima navigazione",
+    "no": "Følg din neste seiling",
+    "sv": "Spåra din nästa segling",
+    "pl": "Śledź swoją następną żeglugę",
+    "ko": "다음 항해를 추적하세요"
   },
   "category": [
     "internet"
@@ -20,6 +40,56 @@
     "en": [
       "color line",
       "color booking",
+      "colorline"
+    ],
+    "nl": [
+      "color line",
+      "color boeking",
+      "colorline"
+    ],
+    "da": [
+      "color line",
+      "color booking",
+      "colorline"
+    ],
+    "de": [
+      "color line",
+      "color buchung",
+      "colorline"
+    ],
+    "es": [
+      "color line",
+      "reserva",
+      "colorline"
+    ],
+    "fr": [
+      "color line",
+      "réservation",
+      "colorline"
+    ],
+    "it": [
+      "color line",
+      "prenotazione",
+      "colorline"
+    ],
+    "no": [
+      "color line",
+      "booking",
+      "colorline"
+    ],
+    "sv": [
+      "color line",
+      "bokning",
+      "colorline"
+    ],
+    "pl": [
+      "color line",
+      "rezerwacja",
+      "colorline"
+    ],
+    "ko": [
+      "color line",
+      "예약",
       "colorline"
     ]
   },
@@ -36,7 +106,7 @@
   "contributing": {
     "donate": {
       "paypal": {
-        "username": "steffenoppdal"
+        "username": "fridtjofsen"
       }
     }
   },
@@ -47,13 +117,43 @@
       {
         "id": "hours_dropped_below",
         "title": {
-          "en": "Hours until departure dropped below..."
+          "en": "Hours until departure dropped below...",
+          "nl": "Uren tot vertrek zijn gedaald onder...",
+          "da": "Timer indtil afgang er faldet under...",
+          "de": "Stunden bis zur Abfahrt sind unter ... gefallen...",
+          "es": "Horas hasta la salida cayeron por debajo de...",
+          "fr": "Heures jusqu'au départ tombées en dessous de...",
+          "it": "Ore fino alla partenza scese sotto...",
+          "no": "Timer til avgang falt under...",
+          "sv": "Timmar till avfärd föll under...",
+          "pl": "Godziny do odjazdu spadły poniżej...",
+          "ko": "출발까지 남은 시간이 ... 이하로 떨어졌습니다."
         },
         "titleFormatted": {
-          "en": "Hours until departure dropped below [[hours]]"
+          "en": "Hours until departure dropped below [[hours]]",
+          "nl": "Uren tot vertrek zijn gedaald onder [[hours]]",
+          "da": "Timer indtil afgang er faldet under [[hours]]",
+          "de": "Stunden bis zur Abfahrt sind unter [[hours]] gefallen...",
+          "es": "Horas hasta la salida cayeron por debajo de [[hours]]",
+          "fr": "Heures jusqu'au départ tombées en dessous de [[hours]]",
+          "it": "Ore fino alla partenza scese sotto [[hours]]",
+          "no": "Timer til avgang falt under [[hours]]",
+          "sv": "Timmar till avfärd föll under [[hours]]",
+          "pl": "Godziny do odjazdu spadły poniżej [[hours]]",
+          "ko": "출발까지 남은 시간이 [[hours]] 이하로 떨어졌습니다."
         },
         "hint": {
-          "en": "Triggers when the hours remaining until departure drops below the specified value."
+          "en": "Triggers when the hours remaining until departure drops below the specified value.",
+          "nl": "Activeert wanneer de resterende uren tot vertrek onder de opgegeven waarde vallen.",
+          "da": "Aktiveres, når timerne tilbage til afgang falder under den angivne værdi.",
+          "de": "Wird ausgelöst, wenn die verbleibenden Stunden bis zur Abfahrt unter den angegebenen Wert fallen.",
+          "es": "Se activa cuando las horas restantes hasta la salida caen por debajo del valor especificado.",
+          "fr": "Déclenche lorsque les heures restantes jusqu'au départ tombent en dessous de la valeur spécifiée.",
+          "it": "Si attiva quando le ore rimanenti fino alla partenza scendono sotto il valore specificato.",
+          "no": "Aktiveres når timer igjen til avgang faller under den angitte verdien.",
+          "sv": "Aktiveras när timmarna kvar till avfärd faller under det angivna värdet.",
+          "pl": "Aktywuje się, gdy pozostałe godziny do odjazdu spadną poniżej określonej wartości.",
+          "ko": "출발까지 남은 시간이 지정된 값 이하로 떨어지면 트리거됩니다."
         },
         "args": [
           {
@@ -65,7 +165,17 @@
             "type": "number",
             "name": "hours",
             "title": {
-              "en": "Hours"
+              "en": "Hours",
+              "nl": "Uren",
+              "da": "Timer",
+              "de": "Stunden",
+              "es": "Horas",
+              "fr": "Heures",
+              "it": "Ore",
+              "no": "Timer",
+              "sv": "Timmar",
+              "pl": "Godziny",
+              "ko": "시간"
             },
             "min": 0,
             "step": 1
@@ -75,13 +185,43 @@
       {
         "id": "hours_rose_above",
         "title": {
-          "en": "Hours until departure rose above..."
+          "en": "Hours until departure rose above...",
+          "nl": "Uren tot vertrek zijn gestegen boven...",
+          "da": "Timer indtil afgang er steget over...",
+          "de": "Stunden bis zur Abfahrt sind über ... gestiegen...",
+          "es": "Horas hasta la salida subieron por encima de...",
+          "fr": "Heures jusqu'au départ montées au-dessus de...",
+          "it": "Ore fino alla partenza salite sopra...",
+          "no": "Timer til avgang steget over...",
+          "sv": "Timmar till avfärd steg över...",
+          "pl": "Godziny do odjazdu wzrosły powyżej...",
+          "ko": "출발까지 남은 시간이 ... 이상으로 상승했습니다."
         },
         "titleFormatted": {
-          "en": "Hours until departure rose above [[hours]]"
+          "en": "Hours until departure rose above [[hours]]",
+          "nl": "Uren tot vertrek zijn gestegen boven [[hours]]",
+          "da": "Timer indtil afgang er steget over [[hours]]",
+          "de": "Stunden bis zur Abfahrt sind über [[hours]] gestiegen...",
+          "es": "Horas hasta la salida subieron por encima de [[hours]]",
+          "fr": "Heures jusqu'au départ montées au-dessus de [[hours]]",
+          "it": "Ore fino alla partenza salite sopra [[hours]]",
+          "no": "Timer til avgang steget over [[hours]]",
+          "sv": "Timmar till avfärd steg över [[hours]]",
+          "pl": "Godziny do odjazdu wzrosły powyżej [[hours]]",
+          "ko": "출발까지 남은 시간이 [[hours]] 이상으로 상승했습니다."
         },
         "hint": {
-          "en": "Triggers when the hours remaining until departure rises above the specified value (e.g. when a new booking with a later departure is tracked)."
+          "en": "Triggers when the hours remaining until departure rises above the specified value (e.g. when a new booking with a later departure is tracked).",
+          "nl": "Activeert wanneer de resterende uren tot vertrek boven de opgegeven waarde stijgen (bijv. wanneer een nieuwe boeking met een latere vertrekdatum wordt gevolgd).",
+          "da": "Aktiveres, når timerne tilbage til afgang stiger over den angivne værdi (f.eks. når en ny booking med en senere afgang registreres).",
+          "de": "Wird ausgelöst, wenn die verbleibenden Stunden bis zur Abfahrt über den angegebenen Wert steigen (z. B. wenn eine neue Buchung mit späterer Abfahrt verfolgt wird).",
+          "es": "Se activa cuando las horas restantes hasta la salida suben por encima del valor especificado (por ejemplo, cuando se rastrea una nueva reserva con una salida posterior).",
+          "fr": "Déclenche lorsque les heures restantes jusqu'au départ dépassent la valeur spécifiée (par exemple, lorsqu'une nouvelle réservation avec un départ ultérieur est suivie).",
+          "it": "Si attiva quando le ore rimanenti fino alla partenza superano il valore specificato (ad esempio, quando viene tracciata una nuova prenotazione con una partenza successiva).",
+          "no": "Aktiveres når timer igjen til avgang stiger over den angitte verdien (f.eks. når en ny bestilling med senere avgang spores).",
+          "sv": "Aktiveras när timmarna kvar till avfärd stiger över det angivna värdet (t.ex. när en ny bokning med senare avfärd spåras).",
+          "pl": "Aktywuje się, gdy pozostałe godziny do odjazdu wzrosną powyżej określonej wartości (np. gdy śledzona jest nowa rezerwacja z późniejszym odjazdem).",
+          "ko": "출발까지 남은 시간이 지정된 값 이상으로 상승하면 트리거됩니다(예: 나중에 출발하는 새 예약이 추적될 때)."
         },
         "args": [
           {
@@ -93,7 +233,17 @@
             "type": "number",
             "name": "hours",
             "title": {
-              "en": "Hours"
+              "en": "Hours",
+              "nl": "Uren",
+              "da": "Timer",
+              "de": "Stunden",
+              "es": "Horas",
+              "fr": "Heures",
+              "it": "Ore",
+              "no": "Timer",
+              "sv": "Timmar",
+              "pl": "Godziny",
+              "ko": "시간"
             },
             "min": 0,
             "step": 1
@@ -103,24 +253,64 @@
       {
         "id": "price_changed",
         "title": {
-          "en": "Price changed"
+          "en": "Price changed",
+          "nl": "Prijs gewijzigd",
+          "da": "Pris ændret",
+          "de": "Preis geändert",
+          "es": "Precio cambiado",
+          "fr": "Prix changé",
+          "it": "Prezzo cambiato",
+          "no": "Pris endret",
+          "sv": "Pris ändrat",
+          "pl": "Cena zmieniona",
+          "ko": "가격 변경됨"
         },
         "hint": {
-          "en": "Triggers when the total price of the booking changes."
+          "en": "Triggers when the total price of the booking changes.",
+          "nl": "Activeert wanneer de totale prijs van de boeking verandert.",
+          "da": "Aktiveres, når den samlede pris for booking ændres.",
+          "de": "Wird ausgelöst, wenn sich der Gesamtpreis der Buchung ändert.",
+          "es": "Se activa cuando el precio total de la reserva cambia.",
+          "fr": "Déclenche lorsque le prix total de la réservation change.",
+          "it": "Si attiva quando il prezzo totale della prenotazione cambia.",
+          "no": "Aktiveres når den totale prisen for bestillingen endres.",
+          "sv": "Aktiveras när det totala priset för bokningen ändras.",
+          "pl": "Aktywuje się, gdy całkowita cena rezerwacji się zmienia.",
+          "ko": "예약의 총 가격이 변경되면 트리거됩니다."
         },
         "tokens": [
           {
             "name": "old_price",
             "type": "string",
             "title": {
-              "en": "Old price"
+              "en": "Old price",
+              "nl": "Oude prijs",
+              "da": "Gammel pris",
+              "de": "Alter Preis",
+              "es": "Precio antiguo",
+              "fr": "Ancien prix",
+              "it": "Prezzo vecchio",
+              "no": "Gammel pris",
+              "sv": "Gammalt pris",
+              "pl": "Stara cena",
+              "ko": "이전 가격"
             }
           },
           {
             "name": "new_price",
             "type": "string",
             "title": {
-              "en": "New price"
+              "en": "New price",
+              "nl": "Nieuwe prijs",
+              "da": "Ny pris",
+              "de": "Neuer Preis",
+              "es": "Nuevo precio",
+              "fr": "Nouveau prix",
+              "it": "Nuovo prezzo",
+              "no": "Ny pris",
+              "sv": "Nytt pris",
+              "pl": "Nowa cena",
+              "ko": "새로운 가격"
             }
           }
         ],
@@ -135,24 +325,64 @@
       {
         "id": "ship_changed",
         "title": {
-          "en": "Ship changed"
+          "en": "Ship changed",
+          "nl": "Schip gewijzigd",
+          "da": "Skib ændret",
+          "de": "Schiff geändert",
+          "es": "Barco cambiado",
+          "fr": "Navire changé",
+          "it": "Nave cambiata",
+          "no": "Skip endret",
+          "sv": "Fartyg ändrat",
+          "pl": "Statek zmieniony",
+          "ko": "선박 변경됨"
         },
         "hint": {
-          "en": "Triggers when the ship assigned to the booking changes."
+          "en": "Triggers when the ship assigned to the booking changes.",
+          "nl": "Activeert wanneer het schip dat aan de boeking is toegewezen verandert.",
+          "da": "Aktiveres, når skibet, der er tildelt booking, ændres.",
+          "de": "Wird ausgelöst, wenn das dem Buchung zugewiesene Schiff geändert wird.",
+          "es": "Se activa cuando el barco asignado a la reserva cambia.",
+          "fr": "Déclenche lorsque le navire attribué à la réservation change.",
+          "it": "Si attiva quando la nave assegnata alla prenotazione cambia.",
+          "no": "Aktiveres når skipet som er tildelt bestillingen endres.",
+          "sv": "Aktiveras när fartyget som tilldelats bokningen ändras.",
+          "pl": "Aktywuje się, gdy statek przypisany do rezerwacji zostanie zmieniony.",
+          "ko": "예약에 할당된 선박이 변경되면 트리거됩니다."
         },
         "tokens": [
           {
             "name": "old_ship",
             "type": "string",
             "title": {
-              "en": "Old ship"
+              "en": "Old ship",
+              "nl": "Oud schip",
+              "da": "Gammelt skib",
+              "de": "Altes Schiff",
+              "es": "Barco antiguo",
+              "fr": "Ancien navire",
+              "it": "Vecchia nave",
+              "no": "Gammelt skip",
+              "sv": "Gammalt fartyg",
+              "pl": "Stary statek",
+              "ko": "이전 선박"
             }
           },
           {
             "name": "new_ship",
             "type": "string",
             "title": {
-              "en": "New ship"
+              "en": "New ship",
+              "nl": "Nieuw schip",
+              "da": "Nyt skib",
+              "de": "Neues Schiff",
+              "es": "Nuevo barco",
+              "fr": "Nouveau navire",
+              "it": "Nuova nave",
+              "no": "Nytt skip",
+              "sv": "Nytt fartyg",
+              "pl": "Nowy statek",
+              "ko": "새로운 선박"
             }
           }
         ],
@@ -167,24 +397,64 @@
       {
         "id": "departure_date_changed",
         "title": {
-          "en": "Departure date changed"
+          "en": "Departure date changed",
+          "nl": "Vertrekdatum gewijzigd",
+          "da": "Afgangsdatum ændret",
+          "de": "Abfahrtsdatum geändert",
+          "es": "Fecha de salida cambiada",
+          "fr": "Date de départ changée",
+          "it": "Data di partenza cambiata",
+          "no": "Avreisedato endret",
+          "sv": "Avresedatum ändrat",
+          "pl": "Data odjazdu zmieniona",
+          "ko": "출발 날짜 변경됨"
         },
         "hint": {
-          "en": "Triggers when the departure date or time changes."
+          "en": "Triggers when the departure date or time changes.",
+          "nl": "Activeert wanneer de vertrekdatum of -tijd verandert.",
+          "da": "Aktiveres, når afgangsdatoen eller -tiden ændres.",
+          "de": "Wird ausgelöst, wenn sich das Abfahrtsdatum oder die Uhrzeit ändert.",
+          "es": "Se activa cuando la fecha o la hora de salida cambia.",
+          "fr": "Déclenche lorsque la date ou l'heure de départ change.",
+          "it": "Si attiva quando la data o l'ora di partenza cambia.",
+          "no": "Aktiveres når avreisedatoen eller -tiden endres.",
+          "sv": "Aktiveras när avresedatumet eller -tiden ändras.",
+          "pl": "Aktywuje się, gdy data lub godzina odjazdu się zmienia.",
+          "ko": "출발 날짜 또는 시간이 변경되면 트리거됩니다."
         },
         "tokens": [
           {
             "name": "old_departure",
             "type": "string",
             "title": {
-              "en": "Old departure"
+              "en": "Old departure",
+              "nl": "Oud vertrek",
+              "da": "Gammelt afgang",
+              "de": "Alter Abflug",
+              "es": "Salida antigua",
+              "fr": "Ancien départ",
+              "it": "Vecchia partenza",
+              "no": "Gammel avgang",
+              "sv": "Gammal avfärd",
+              "pl": "Stary odjazd",
+              "ko": "이전 출발"
             }
           },
           {
             "name": "new_departure",
             "type": "string",
             "title": {
-              "en": "New departure"
+              "en": "New departure",
+              "nl": "Nieuwe vertrek",
+              "da": "Nyt afgang",
+              "de": "Neuer Abflug",
+              "es": "Nueva salida",
+              "fr": "Nouveau départ",
+              "it": "Nuova partenza",
+              "no": "Ny avgang",
+              "sv": "Ny avfärd",
+              "pl": "Nowy odjazd",
+              "ko": "새로운 출발"
             }
           }
         ],
@@ -199,13 +469,43 @@
       {
         "id": "days_dropped_below",
         "title": {
-          "en": "Days until departure dropped below..."
+          "en": "Days until departure dropped below...",
+          "nl": "Dagen tot vertrek zijn gedaald onder...",
+          "da": "Dage indtil afgang er faldet under...",
+          "de": "Tage bis zur Abfahrt sind unter ... gefallen...",
+          "es": "Días hasta la salida cayeron por debajo de...",
+          "fr": "Jours jusqu'au départ tombés en dessous de...",
+          "it": "Giorni fino alla partenza scesi sotto...",
+          "no": "Dager til avgang falt under...",
+          "sv": "Dagar till avfärd föll under...",
+          "pl": "Dni do odjazdu spadły poniżej...",
+          "ko": "출발까지 남은 일이 ... 이하로 떨어졌습니다."
         },
         "titleFormatted": {
-          "en": "Days until departure dropped below [[days]]"
+          "en": "Days until departure dropped below [[days]]",
+          "nl": "Dagen tot vertrek zijn gedaald onder [[days]]",
+          "da": "Dage indtil afgang er faldet under [[days]]",
+          "de": "Tage bis zur Abfahrt sind unter [[days]] gefallen...",
+          "es": "Días hasta la salida cayeron por debajo de [[days]]",
+          "fr": "Jours jusqu'au départ tombés en dessous de [[days]]",
+          "it": "Giorni fino alla partenza scesi sotto [[days]]",
+          "no": "Dager til avgang falt under [[days]]",
+          "sv": "Dagar till avfärd föll under [[days]]",
+          "pl": "Dni do odjazdu spadły poniżej [[days]]",
+          "ko": "출발까지 남은 일이 [[days]] 이하로 떨어졌습니다."
         },
         "hint": {
-          "en": "Triggers when the days remaining until departure drops below the specified value."
+          "en": "Triggers when the days remaining until departure drops below the specified value.",
+          "nl": "Activeert wanneer de resterende dagen tot vertrek onder de opgegeven waarde vallen.",
+          "da": "Aktiveres, når dagene tilbage til afgang falder under den angivne værdi.",
+          "de": "Wird ausgelöst, wenn die verbleibenden Tage bis zur Abfahrt unter den angegebenen Wert fallen.",
+          "es": "Se activa cuando los días restantes hasta la salida caen por debajo del valor especificado.",
+          "fr": "Déclenche lorsque les jours restants jusqu'au départ tombent en dessous de la valeur spécifiée.",
+          "it": "Si attiva quando i giorni rimanenti fino alla partenza scendono sotto il valore specificato.",
+          "no": "Aktiveres når dager igjen til avgang faller under den angitte verdien.",
+          "sv": "Aktiveras när dagarna kvar till avfärd faller under det angivna värdet.",
+          "pl": "Aktywuje się, gdy pozostałe dni do odjazdu spadną poniżej określonej wartości.",
+          "ko": "출발까지 남은 일이 지정된 값 이하로 떨어지면 트리거됩니다."
         },
         "args": [
           {
@@ -217,7 +517,17 @@
             "type": "number",
             "name": "days",
             "title": {
-              "en": "Days"
+              "en": "Days",
+              "nl": "Dagen",
+              "da": "Dage",
+              "de": "Tage",
+              "es": "Días",
+              "fr": "Jours",
+              "it": "Giorni",
+              "no": "Dager",
+              "sv": "Dagar",
+              "pl": "Dni",
+              "ko": "일"
             },
             "min": 0,
             "step": 1
@@ -227,13 +537,43 @@
       {
         "id": "days_rose_above",
         "title": {
-          "en": "Days until departure rose above..."
+          "en": "Days until departure rose above...",
+          "nl": "Dagen tot vertrek zijn gestegen boven...",
+          "da": "Dage indtil afgang er steget over...",
+          "de": "Tage bis zur Abfahrt sind über ... gestiegen...",
+          "es": "Días hasta la salida subieron por encima de...",
+          "fr": "Jours jusqu'au départ montés au-dessus de...",
+          "it": "Giorni fino alla partenza saliti sopra...",
+          "no": "Dager til avgang steget over...",
+          "sv": "Dagar till avfärd steg över...",
+          "pl": "Dni do odjazdu wzrosły powyżej...",
+          "ko": "출발까지 남은 일이 ... 이상으로 상승했습니다."
         },
         "titleFormatted": {
-          "en": "Days until departure rose above [[days]]"
+          "en": "Days until departure rose above [[days]]",
+          "nl": "Dagen tot vertrek zijn gestegen boven [[days]]",
+          "da": "Dage indtil afgang er steget over [[days]]",
+          "de": "Tage bis zur Abfahrt sind über [[days]] gestiegen...",
+          "es": "Días hasta la salida subieron por encima de [[days]]",
+          "fr": "Jours jusqu'au départ montés au-dessus de [[days]]",
+          "it": "Giorni fino alla partenza saliti sopra [[days]]",
+          "no": "Dager til avgang steget over [[days]]",
+          "sv": "Dagar till avfärd steg över [[days]]",
+          "pl": "Dni do odjazdu wzrosły powyżej [[days]]",
+          "ko": "출발까지 남은 일이 [[days]] 이상으로 상승했습니다."
         },
         "hint": {
-          "en": "Triggers when the days remaining until departure rises above the specified value."
+          "en": "Triggers when the days remaining until departure rises above the specified value.",
+          "nl": "Activeert wanneer de resterende dagen tot vertrek boven de opgegeven waarde stijgen.",
+          "da": "Aktiveres, når dagene tilbage til afgang stiger over den angivne værdi.",
+          "de": "Wird ausgelöst, wenn die verbleibenden Tage bis zur Abfahrt über den angegebenen Wert steigen.",
+          "es": "Se activa cuando los días restantes hasta la salida suben por encima del valor especificado.",
+          "fr": "Déclenche lorsque les jours restants jusqu'au départ dépassent la valeur spécifiée.",
+          "it": "Si attiva quando i giorni rimanenti fino alla partenza superano il valore specificato.",
+          "no": "Aktiveres når dager igjen til avgang stiger over den angitte verdien.",
+          "sv": "Aktiveras när dagarna kvar till avfärd stiger över det angivna värdet.",
+          "pl": "Aktywuje się, gdy pozostałe dni do odjazdu wzrosną powyżej określonej wartości.",
+          "ko": "출발까지 남은 일이 지정된 값 이상으로 상승하면 트리거됩니다."
         },
         "args": [
           {
@@ -245,7 +585,17 @@
             "type": "number",
             "name": "days",
             "title": {
-              "en": "Days"
+              "en": "Days",
+              "nl": "Dagen",
+              "da": "Dage",
+              "de": "Tage",
+              "es": "Días",
+              "fr": "Jours",
+              "it": "Giorni",
+              "no": "Dager",
+              "sv": "Dagar",
+              "pl": "Dni",
+              "ko": "일"
             },
             "min": 0,
             "step": 1
@@ -255,10 +605,30 @@
       {
         "id": "sailing_departed",
         "title": {
-          "en": "Sailing has departed"
+          "en": "Sailing has departed",
+          "nl": "Varen is vertrokken",
+          "da": "Sejlads er afgået",
+          "de": "Segeln ist abgefahren",
+          "es": "La navegación ha partido",
+          "fr": "La navigation est partie",
+          "it": "La navigazione è partita",
+          "no": "Seilasen har avgått",
+          "sv": "Seglingen har avgått",
+          "pl": "Rejs już odjechał",
+          "ko": "항해가 출발했습니다."
         },
         "hint": {
-          "en": "Triggers when the departure time has passed."
+          "en": "Triggers when the departure time has passed.",
+          "nl": "Activeert wanneer de vertrektijd is verstreken.",
+          "da": "Aktiveres, når afgangstiden er overskredet.",
+          "de": "Wird ausgelöst, wenn die Abfahrtszeit überschritten ist.",
+          "es": "Se activa cuando ha pasado la hora de salida.",
+          "fr": "Déclenche lorsque l'heure de départ est passée.",
+          "it": "Si attiva quando l'orario di partenza è passato.",
+          "no": "Aktiveres når avgangstiden har passert.",
+          "sv": "Aktiveras när avresetiden har passerat.",
+          "pl": "Aktywuje się, gdy czas odjazdu minął.",
+          "ko": "출발 시간이 지나면 트리거됩니다."
         },
         "args": [
           {
@@ -271,24 +641,64 @@
       {
         "id": "payment_status_changed",
         "title": {
-          "en": "Payment status changed"
+          "en": "Payment status changed",
+          "nl": "Betalingsstatus gewijzigd",
+          "da": "Betalingsstatus ændret",
+          "de": "Zahlungsstatus geändert",
+          "es": "Estado de pago cambiado",
+          "fr": "Statut de paiement changé",
+          "it": "Stato di pagamento cambiato",
+          "no": "Betalingsstatus endret",
+          "sv": "Betalningsstatus ändrad",
+          "pl": "Status płatności zmieniony",
+          "ko": "결제 상태 변경됨"
         },
         "hint": {
-          "en": "Triggers when the payment status of the booking changes."
+          "en": "Triggers when the payment status of the booking changes.",
+          "nl": "Activeert wanneer de betalingsstatus van de boeking verandert.",
+          "da": "Aktiveres, når betalingsstatus for booking ændres.",
+          "de": "Wird ausgelöst, wenn sich der Zahlungsstatus der Buchung ändert.",
+          "es": "Se activa cuando el estado de pago de la reserva cambia.",
+          "fr": "Déclenche lorsque le statut de paiement de la réservation change.",
+          "it": "Si attiva quando lo stato di pagamento della prenotazione cambia.",
+          "no": "Aktiveres når betalingsstatus for bestillingen endres.",
+          "sv": "Aktiveras när betalningsstatusen för bokningen ändras.",
+          "pl": "Aktywuje się, gdy status płatności rezerwacji się zmienia.",
+          "ko": "예약의 결제 상태가 변경되면 트리거됩니다."
         },
         "tokens": [
           {
             "name": "old_status",
             "type": "string",
             "title": {
-              "en": "Old status"
+              "en": "Old status",
+              "nl": "Oude status",
+              "da": "Gammel status",
+              "de": "Alter Status",
+              "es": "Estado antiguo",
+              "fr": "Ancien statut",
+              "it": "Vecchio stato",
+              "no": "Gammel status",
+              "sv": "Gammal status",
+              "pl": "Stary status",
+              "ko": "이전 상태"
             }
           },
           {
             "name": "new_status",
             "type": "string",
             "title": {
-              "en": "New status"
+              "en": "New status",
+              "nl": "Nieuwe status",
+              "da": "Ny status",
+              "de": "Neuer Status",
+              "es": "Nuevo estado",
+              "fr": "Nouveau statut",
+              "it": "Nuovo stato",
+              "no": "Ny status",
+              "sv": "Ny status",
+              "pl": "Nowy status",
+              "ko": "새로운 상태"
             }
           }
         ],
@@ -305,10 +715,30 @@
       {
         "id": "hours_less_than",
         "title": {
-          "en": "Hours until departure is less than..."
+          "en": "Hours until departure is less than...",
+          "nl": "Uren tot vertrek is minder dan...",
+          "da": "Timer indtil afgang er mindre end...",
+          "de": "Stunden bis zur Abfahrt sind weniger als ...",
+          "es": "Horas hasta la salida es menos que...",
+          "fr": "Heures jusqu'au départ est inférieur à...",
+          "it": "Ore fino alla partenza è inferiore a...",
+          "no": "Timer til avgang er mindre enn...",
+          "sv": "Timmar till avfärd är mindre än...",
+          "pl": "Godziny do odjazdu są mniejsze niż...",
+          "ko": "출발까지 남은 시간이 ... 미만입니다."
         },
         "titleFormatted": {
-          "en": "Hours until departure is less than [[hours]]"
+          "en": "Hours until departure is less than [[hours]]",
+          "nl": "Uren tot vertrek is minder dan [[hours]]",
+          "da": "Timer indtil afgang er mindre end [[hours]]",
+          "de": "Stunden bis zur Abfahrt sind weniger als [[hours]]",
+          "es": "Horas hasta la salida es menos que [[hours]]",
+          "fr": "Heures jusqu'au départ est inférieur à [[hours]]",
+          "it": "Ore fino alla partenza è inferiore a [[hours]]",
+          "no": "Timer til avgang er mindre enn [[hours]]",
+          "sv": "Timmar till avfärd är mindre än [[hours]]",
+          "pl": "Godziny do odjazdu są mniejsze niż [[hours]]",
+          "ko": "출발까지 남은 시간이 [[hours]] 미만입니다."
         },
         "args": [
           {
@@ -320,7 +750,17 @@
             "type": "number",
             "name": "hours",
             "title": {
-              "en": "Hours"
+              "en": "Hours",
+              "nl": "Uren",
+              "da": "Timer",
+              "de": "Stunden",
+              "es": "Horas",
+              "fr": "Heures",
+              "it": "Ore",
+              "no": "Timer",
+              "sv": "Timmar",
+              "pl": "Godziny",
+              "ko": "시간"
             },
             "min": 0,
             "step": 1
@@ -330,10 +770,30 @@
       {
         "id": "hours_greater_than",
         "title": {
-          "en": "Hours until departure is greater than..."
+          "en": "Hours until departure is greater than...",
+          "nl": "Uren tot vertrek is groter dan...",
+          "da": "Timer indtil afgang er større end...",
+          "de": "Stunden bis zur Abfahrt sind größer als ...",
+          "es": "Horas hasta la salida es mayor que...",
+          "fr": "Heures jusqu'au départ est supérieur à...",
+          "it": "Ore fino alla partenza è maggiore di...",
+          "no": "Timer til avgang er større enn...",
+          "sv": "Timmar till avfärd är större än...",
+          "pl": "Godziny do odjazdu są większe niż...",
+          "ko": "출발까지 남은 시간이 ... 이상입니다."
         },
         "titleFormatted": {
-          "en": "Hours until departure is greater than [[hours]]"
+          "en": "Hours until departure is greater than [[hours]]",
+          "nl": "Uren tot vertrek is groter dan [[hours]]",
+          "da": "Timer indtil afgang er større end [[hours]]",
+          "de": "Stunden bis zur Abfahrt sind größer als [[hours]]",
+          "es": "Horas hasta la salida es mayor que [[hours]]",
+          "fr": "Heures jusqu'au départ est supérieur à [[hours]]",
+          "it": "Ore fino alla partenza è maggiore di [[hours]]",
+          "no": "Timer til avgang er større enn [[hours]]",
+          "sv": "Timmar till avfärd är större än [[hours]]",
+          "pl": "Godziny do odjazdu są większe niż [[hours]]",
+          "ko": "출발까지 남은 시간이 [[hours]] 이상입니다."
         },
         "args": [
           {
@@ -345,7 +805,17 @@
             "type": "number",
             "name": "hours",
             "title": {
-              "en": "Hours"
+              "en": "Hours",
+              "nl": "Uren",
+              "da": "Timer",
+              "de": "Stunden",
+              "es": "Horas",
+              "fr": "Heures",
+              "it": "Ore",
+              "no": "Timer",
+              "sv": "Timmar",
+              "pl": "Godziny",
+              "ko": "시간"
             },
             "min": 0,
             "step": 1
@@ -355,10 +825,30 @@
       {
         "id": "days_less_than",
         "title": {
-          "en": "Days until departure is less than..."
+          "en": "Days until departure is less than...",
+          "nl": "Dagen tot vertrek is minder dan...",
+          "da": "Dage indtil afgang er mindre end...",
+          "de": "Tage bis zur Abfahrt sind weniger als ...",
+          "es": "Días hasta la salida es menos que...",
+          "fr": "Jours jusqu'au départ est inférieur à...",
+          "it": "Giorni fino alla partenza è inferiore a...",
+          "no": "Dager til avgang er mindre enn...",
+          "sv": "Dagar till avfärd är mindre än...",
+          "pl": "Dni do odjazdu są mniejsze niż...",
+          "ko": "출발까지 남은 일이 ... 미만입니다."
         },
         "titleFormatted": {
-          "en": "Days until departure is less than [[days]]"
+          "en": "Days until departure is less than [[days]]",
+          "nl": "Dagen tot vertrek is minder dan [[days]]",
+          "da": "Dage indtil afgang er mindre end [[days]]",
+          "de": "Tage bis zur Abfahrt sind weniger als [[days]]",
+          "es": "Días hasta la salida es menos que [[days]]",
+          "fr": "Jours jusqu'au départ est inférieur à [[days]]",
+          "it": "Giorni fino alla partenza è inferiore a [[days]]",
+          "no": "Dager til avgang er mindre enn [[days]]",
+          "sv": "Dagar till avfärd är mindre än [[days]]",
+          "pl": "Dni do odjazdu są mniejsze niż [[days]]",
+          "ko": "출발까지 남은 일이 [[days]] 미만입니다."
         },
         "args": [
           {
@@ -370,7 +860,17 @@
             "type": "number",
             "name": "days",
             "title": {
-              "en": "Days"
+              "en": "Days",
+              "nl": "Dagen",
+              "da": "Dage",
+              "de": "Tage",
+              "es": "Días",
+              "fr": "Jours",
+              "it": "Giorni",
+              "no": "Dager",
+              "sv": "Dagar",
+              "pl": "Dni",
+              "ko": "일"
             },
             "min": 0,
             "step": 1
@@ -380,10 +880,30 @@
       {
         "id": "days_greater_than",
         "title": {
-          "en": "Days until departure is greater than..."
+          "en": "Days until departure is greater than...",
+          "nl": "Dagen tot vertrek is groter dan...",
+          "da": "Dage indtil afgang er større end...",
+          "de": "Tage bis zur Abfahrt sind größer als ...",
+          "es": "Días hasta la salida es mayor que...",
+          "fr": "Jours jusqu'au départ est supérieur à...",
+          "it": "Giorni fino alla partenza è maggiore di...",
+          "no": "Dager til avgang er større enn...",
+          "sv": "Dagar till avfärd är större än...",
+          "pl": "Dni do odjazdu są większe niż...",
+          "ko": "출발까지 남은 일이 [[days]] 이상입니다."
         },
         "titleFormatted": {
-          "en": "Days until departure is greater than [[days]]"
+          "en": "Days until departure is greater than [[days]]",
+          "nl": "Dagen til afgang er større end [[days]]",
+          "da": "Dage indtil afgang er større end [[days]]",
+          "de": "Tage bis zur Abfahrt sind größer als [[days]]",
+          "es": "Días hasta la salida es mayor que [[days]]",
+          "fr": "Jours jusqu'au départ est supérieur à [[days]]",
+          "it": "Giorni fino alla partenza è maggiore di [[days]]",
+          "no": "Dager til avgang er større enn [[days]]",
+          "sv": "Dagar till avfärd är större än [[days]]",
+          "pl": "Dni do odjazdu są większe niż [[days]]",
+          "ko": "출발까지 남은 일이 [[days]] 이상입니다."
         },
         "args": [
           {
@@ -395,7 +915,17 @@
             "type": "number",
             "name": "days",
             "title": {
-              "en": "Days"
+              "en": "Days",
+              "nl": "Dagen",
+              "da": "Dage",
+              "de": "Tage",
+              "es": "Días",
+              "fr": "Jours",
+              "it": "Giorni",
+              "no": "Dager",
+              "sv": "Dagar",
+              "pl": "Dni",
+              "ko": "일"
             },
             "min": 0,
             "step": 1
@@ -407,13 +937,43 @@
       {
         "id": "refresh_booking",
         "title": {
-          "en": "Refresh booking data"
+          "en": "Refresh booking data",
+          "nl": "Boekingsgegevens vernieuwen",
+          "da": "Opdater bookingdata",
+          "de": "Buchungsdaten aktualisieren",
+          "es": "Actualizar datos de reserva",
+          "fr": "Actualiser les données de réservation",
+          "it": "Aggiorna i dati della prenotazione",
+          "no": "Oppdater bestillingsdata",
+          "sv": "Uppdatera bokningsdata",
+          "pl": "Odśwież dane rezerwacji",
+          "ko": "예약 데이터 새로 고침"
         },
         "titleFormatted": {
-          "en": "Refresh booking data for [[device]]"
+          "en": "Refresh booking data for [[device]]",
+          "nl": "Boekingsgegevens vernieuwen voor [[device]]",
+          "da": "Opdater bookingdata for [[device]]",
+          "de": "Buchungsdaten aktualisieren für [[device]]",
+          "es": "Actualizar datos de reserva para [[device]]",
+          "fr": "Actualiser les données de réservation pour [[device]]",
+          "it": "Aggiorna i dati della prenotazione per [[device]]",
+          "no": "Oppdater bestillingsdata for [[device]]",
+          "sv": "Uppdatera bokningsdata för [[device]]",
+          "pl": "Odśwież dane rezerwacji dla [[device]]",
+          "ko": "[[device]]에 대한 예약 데이터 새로 고침"
         },
         "hint": {
-          "en": "Manually trigger a data refresh from Color Line for this booking."
+          "en": "Manually trigger a data refresh from Color Line for this booking.",
+          "nl": "Handmatig een gegevensvernieuwing van Color Line voor deze boeking activeren.",
+          "da": "Manuelt udløse en dataopdatering fra Color Line for denne booking.",
+          "de": "Manuell Auslösung einer Datenaktualisierung von Color Line für diese Buchung.",
+          "es": "Active manualmente una actualización de datos de Color Line para esta reserva.",
+          "fr": "Déclenche manuellement une actualisation des données de Color Line pour cette réservation.",
+          "it": "Attiva manualmente un aggiornamento dei dati di Color Line per questa prenotazione.",
+          "no": "Manuelt utløse en dataoppdatering fra Color Line for denne bestillingen.",
+          "sv": "Manuellt utlösa en datauppdatering från Color Line för denna bokning.",
+          "pl": "Ręcznie uruchom aktualizację danych z Color Line dla tej rezerwacji.",
+          "ko": "이 예약에 대해 Color Line에서 데이터 새로 고침을 수동으로 트리거합니다."
         },
         "args": [
           {
@@ -428,7 +988,17 @@
   "drivers": [
     {
       "name": {
-        "en": "Color Line Booking"
+        "en": "Color Line Booking",
+        "nl": "Kleurlijn Boeking",
+        "da": "Farvelinje Booking",
+        "de": "Color Line Buchung",
+        "es": "Reserva de Color Line",
+        "fr": "Réservation Color Line",
+        "it": "Prenotazione Color Line",
+        "no": "Color Line Bestilling",
+        "sv": "Color Line Bokning",
+        "pl": "Rezerwacja Color Line",
+        "ko": "컬러 라인 예약"
       },
       "class": "other",
       "capabilities": [
@@ -453,7 +1023,17 @@
       "capabilitiesOptions": {
         "measure_time_remaining": {
           "title": {
-            "en": "Hours until departure"
+            "en": "Hours until departure",
+            "nl": "Uren tot vertrek",
+            "da": "Timer til afgang",
+            "de": "Stunden bis zur Abfahrt",
+            "es": "Horas hasta la salida",
+            "fr": "Heures avant le départ",
+            "it": "Ore fino alla partenza",
+            "no": "Timer til avgang",
+            "sv": "Timmar till avfärd",
+            "pl": "Godziny do odjazdu",
+            "ko": "출발까지 남은 시간"
           }
         }
       },
@@ -468,16 +1048,56 @@
           "template": "login_credentials",
           "options": {
             "title": {
-              "en": "Find Booking"
+              "en": "Find Booking",
+              "nl": "Zoek Boeking",
+              "da": "Find Booking",
+              "de": "Buchung finden",
+              "es": "Encontrar Reserva",
+              "fr": "Trouver la Réservation",
+              "it": "Trova Prenotazione",
+              "no": "Finn Bestilling",
+              "sv": "Hitta Bokning",
+              "pl": "Znajdź Rezerwację",
+              "ko": "예약 찾기"
             },
             "usernameLabel": {
-              "en": "Last Name"
+              "en": "Last Name",
+              "nl": "Achternaam",
+              "da": "Efternavn",
+              "de": "Nachname",
+              "es": "Apellido",
+              "fr": "Nom de Famille",
+              "it": "Cognome",
+              "no": "Etternavn",
+              "sv": "Efternamn",
+              "pl": "Nazwisko",
+              "ko": "성"
             },
             "passwordLabel": {
-              "en": "Booking Number"
+              "en": "Booking Number",
+              "nl": "Boekingsnummer",
+              "da": "Bookingnummer",
+              "de": "Buchungsnummer",
+              "es": "Número de Reserva",
+              "fr": "Numéro de Réservation",
+              "it": "Numero di Prenotazione",
+              "no": "Bestillingsnummer",
+              "sv": "Bokningsnummer",
+              "pl": "Numer rezerwacji",
+              "ko": "예약 번호"
             },
             "hint": {
-              "en": "Enter your Last Name and Booking Number (not password) to track a specific booking."
+              "en": "Enter your Last Name and Booking Number (not password) to track a specific booking.",
+              "nl": "Voer uw achternaam en boekingsnummer in (geen wachtwoord) om een specifieke boeking te volgen.",
+              "da": "Indtast dit efternavn og bookingnummer (ikke adgangskode) for at spore en specifik booking.",
+              "de": "Geben Sie Ihren Nachnamen und die Buchungsnummer (nicht das Passwort) ein, um eine bestimmte Buchung zu verfolgen.",
+              "es": "Ingrese su apellido y número de reserva (no contraseña) para rastrear una reserva específica.",
+              "fr": "Entrez votre nom de famille et votre numéro de réservation (pas de mot de passe) pour suivre une réservation spécifique.",
+              "it": "Inserisci il tuo cognome e il numero di prenotazione (non la password) per tracciare una prenotazione specifica.",
+              "no": "Skriv inn etternavnet ditt og bestillingsnummeret (ikke passord) for å spore en spesifikk bestilling.",
+              "sv": "Ange ditt efternamn och bokningsnummer (inte lösenord) för att spåra en specifik bokning.",
+              "pl": "Wprowadź swoje nazwisko i numer rezerwacji (nie hasło), aby śledzić konkretną rezerwację.",
+              "ko": "특정 예약을 추적하려면 성과 예약 번호(비밀번호 아님)를 입력하세요."
             }
           }
         },
@@ -498,7 +1118,17 @@
           "id": "polling_interval",
           "type": "number",
           "label": {
-            "en": "Polling Interval (minutes)"
+            "en": "Polling Interval (minutes)",
+            "nl": "Polling Interval (minuten)",
+            "da": "Polling Interval (minutter)",
+            "de": "Abfrageintervall (Minuten)",
+            "es": "Intervalo de Sondeo (minutos)",
+            "fr": "Intervalle de Sondage (minutes)",
+            "it": "Intervallo di Polling (minuti)",
+            "no": "Polling Intervall (minutter)",
+            "sv": "Pollingintervall (minuter)",
+            "pl": "Interwał Pollingu (minuty)",
+            "ko": "폴링 간격 (분)"
           },
           "value": 60,
           "min": 15,
@@ -508,20 +1138,60 @@
           "id": "lastName",
           "type": "text",
           "label": {
-            "en": "Last Name"
+            "en": "Last Name",
+            "nl": "Achternaam",
+            "da": "Efternavn",
+            "de": "Nachname",
+            "es": "Apellido",
+            "fr": "Nom de Famille",
+            "it": "Cognome",
+            "no": "Etternavn",
+            "sv": "Efternamn",
+            "pl": "Nazwisko",
+            "ko": "성"
           },
           "hint": {
-            "en": "Last name on the booking"
+            "en": "Last name on the booking",
+            "nl": "Achternaam op de boeking",
+            "da": "Efternavn på booking",
+            "de": "Nachname auf der Buchung",
+            "es": "Apellido en la reserva",
+            "fr": "Nom de famille sur la réservation",
+            "it": "Cognome sulla prenotazione",
+            "no": "Etternavn på bestillingen",
+            "sv": "Efternamn på bokningen",
+            "pl": "Nazwisko w rezerwacji",
+            "ko": "예약의 성"
           }
         },
         {
           "id": "bookingReference",
           "type": "text",
           "label": {
-            "en": "Booking Number"
+            "en": "Booking Number",
+            "nl": "Boekingsnummer",
+            "da": "Bookingnummer",
+            "de": "Buchungsnummer",
+            "es": "Número de Reserva",
+            "fr": "Numéro de Réservation",
+            "it": "Numero di Prenotazione",
+            "no": "Bestillingsnummer",
+            "sv": "Bokningsnummer",
+            "pl": "Numer rezerwacji",
+            "ko": "예약 번호"
           },
           "hint": {
-            "en": "Your booking reference number"
+            "en": "Your booking reference number",
+            "nl": "Uw boekingsreferentienummer",
+            "da": "Dit bookingreferencenummer",
+            "de": "Ihre Buchungsreferenznummer",
+            "es": "Su número de referencia de reserva",
+            "fr": "Votre numéro de référence de réservation",
+            "it": "Il tuo numero di riferimento della prenotazione",
+            "no": "Ditt bestillingsreferansenummer",
+            "sv": "Ditt bokningsreferensnummer",
+            "pl": "Twój numer referencyjny rezerwacji",
+            "ko": "귀하의 예약 참조 번호"
           }
         }
       ],
@@ -531,7 +1201,17 @@
   "widgets": {
     "booking-countdown": {
       "name": {
-        "en": "Departure Countdown"
+        "en": "Departure Countdown",
+        "nl": "Vertrek Aftelling",
+        "da": "Afgang Nedtælling",
+        "de": "Abfahrtscountdown",
+        "es": "Cuenta Regresiva de Salida",
+        "fr": "Compte à Rebours de Départ",
+        "it": "Conto alla Rovescia della Partenza",
+        "no": "Avgangsnedtelling",
+        "sv": "Nedräkning till Avresa",
+        "pl": "Odwrotne Odliczanie do Odjazdu",
+        "ko": "출발 카운트다운"
       },
       "height": 220,
       "transparent": false,
@@ -553,7 +1233,17 @@
     "arrival_time": {
       "type": "string",
       "title": {
-        "en": "Arrival Time"
+        "en": "Arrival Time",
+        "nl": "Aankomsttijd",
+        "da": "Ankomsttid",
+        "de": "Ankunftszeit",
+        "es": "Hora de llegada",
+        "fr": "Heure d'arrivée",
+        "it": "Orario di arrivo",
+        "no": "Ankomsttid",
+        "sv": "Ankomsttid",
+        "pl": "Czas przybycia",
+        "ko": "도착 시간"
       },
       "getable": true,
       "setable": false,
@@ -563,7 +1253,17 @@
     "booking_reference": {
       "type": "string",
       "title": {
-        "en": "Booking Reference"
+        "en": "Booking Reference",
+        "nl": "Boekingsreferentie",
+        "da": "Booking Reference",
+        "de": "Buchungsreferenz",
+        "es": "Referencia de Reserva",
+        "fr": "Référence de Réservation",
+        "it": "Riferimento Prenotazione",
+        "no": "Bestillingsreferanse",
+        "sv": "Bokningsreferens",
+        "pl": "Referencja rezerwacji",
+        "ko": "예약 참조"
       },
       "getable": true,
       "setable": false,
@@ -573,7 +1273,17 @@
     "booking_status": {
       "type": "string",
       "title": {
-        "en": "Booking Status"
+        "en": "Booking Status",
+        "nl": "Boekingsstatus",
+        "da": "Bookingstatus",
+        "de": "Buchungsstatus",
+        "es": "Estado de la reserva",
+        "fr": "Statut de réservation",
+        "it": "Stato della prenotazione",
+        "no": "Bestillingsstatus",
+        "sv": "Bokningsstatus",
+        "pl": "Status rezerwacji",
+        "ko": "예약 상태"
       },
       "getable": true,
       "setable": false,
@@ -583,7 +1293,17 @@
     "cabin_info": {
       "type": "string",
       "title": {
-        "en": "Cabins"
+        "en": "Cabins",
+        "nl": "Cabines",
+        "da": "Hytter",
+        "de": "Kabinen",
+        "es": "Cabañas",
+        "fr": "Cabines",
+        "it": "Cabine",
+        "no": "Hytter",
+        "sv": "Stugor",
+        "pl": "Kabiny",
+        "ko": "캐빈"
       },
       "getable": true,
       "setable": false,
@@ -593,22 +1313,52 @@
     "days_until_departure": {
       "type": "number",
       "title": {
-        "en": "Days until departure"
+        "en": "Days until departure",
+        "nl": "Dagen tot vertrek",
+        "da": "Dage indtil afgang",
+        "de": "Tage bis zur Abreise",
+        "es": "Días hasta la salida",
+        "fr": "Jours avant le départ",
+        "it": "Giorni fino alla partenza",
+        "no": "Dager til avreise",
+        "sv": "Dagar till avresa",
+        "pl": "Dni do wyjazdu",
+        "ko": "출발까지 남은 일수"
       },
       "units": {
-        "en": "d"
+        "en": "d",
+        "nl": "d",
+        "da": "d",
+        "de": "d",
+        "es": "d",
+        "fr": "j",
+        "it": "g",
+        "no": "d",
+        "sv": "d",
+        "pl": "d",
+        "ko": "일"
       },
       "decimals": 1,
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
-      "insights": true,
+      "insights": false,
       "icon": "/assets/icons/days_until_departure.svg"
     },
     "departure_time": {
       "type": "string",
       "title": {
-        "en": "Departure Time"
+        "en": "Departure Time",
+        "nl": "Vertrektijd",
+        "da": "Afgangstid",
+        "de": "Abfahrtszeit",
+        "es": "Hora de Salida",
+        "fr": "Heure de Départ",
+        "it": "Orario di Partenza",
+        "no": "Avgangstid",
+        "sv": "Avgångstid",
+        "pl": "Czas Odjazdu",
+        "ko": "출발 시간"
       },
       "getable": true,
       "setable": false,
@@ -618,7 +1368,17 @@
     "guest_count": {
       "type": "number",
       "title": {
-        "en": "Guests"
+        "en": "Guests",
+        "nl": "Gasten",
+        "da": "Gæster",
+        "de": "Gäste",
+        "es": "Invitados",
+        "fr": "Invités",
+        "it": "Ospiti",
+        "no": "Gjestene",
+        "sv": "Gäster",
+        "pl": "Goście",
+        "ko": "손님"
       },
       "getable": true,
       "setable": false,
@@ -628,7 +1388,17 @@
     "measure_duration": {
       "type": "string",
       "title": {
-        "en": "Trip Duration"
+        "en": "Trip Duration",
+        "nl": "Reisduur",
+        "da": "Rejsetid",
+        "de": "Reisedauer",
+        "es": "Duración del viaje",
+        "fr": "Durée du voyage",
+        "it": "Durata del viaggio",
+        "no": "Reisetid",
+        "sv": "Reslängd",
+        "pl": "Czas podróży",
+        "ko": "여행 시간"
       },
       "getable": true,
       "setable": false,
@@ -638,21 +1408,51 @@
     "measure_time_remaining": {
       "type": "number",
       "title": {
-        "en": "Hours until departure"
+        "en": "Hours until departure",
+        "nl": "Uren tot vertrek",
+        "da": "Timer indtil afgang",
+        "de": "Stunden bis zur Abfahrt",
+        "es": "Horas hasta la salida",
+        "fr": "Heures jusqu'au départ",
+        "it": "Ore fino alla partenza",
+        "no": "Timer til avgang",
+        "sv": "Timmar till avfärd",
+        "pl": "Godziny do odjazdu",
+        "ko": "출발까지 남은 시간"
       },
       "units": {
-        "en": "h"
+        "en": "h",
+        "nl": "u",
+        "da": "t",
+        "de": "h",
+        "es": "h",
+        "fr": "h",
+        "it": "h",
+        "no": "t",
+        "sv": "h",
+        "pl": "g",
+        "ko": "시"
       },
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
-      "insights": true,
+      "insights": false,
       "icon": "/assets/icons/measure_time_remaining.svg"
     },
     "payment_status": {
       "type": "string",
       "title": {
-        "en": "Payment Status"
+        "en": "Payment Status",
+        "nl": "Betalingsstatus",
+        "da": "Betalingsstatus",
+        "de": "Zahlungsstatus",
+        "es": "Estado de Pago",
+        "fr": "État du Paiement",
+        "it": "Stato del Pagamento",
+        "no": "Betalingsstatus",
+        "sv": "Betalningsstatus",
+        "pl": "Status Płatności",
+        "ko": "결제 상태"
       },
       "getable": true,
       "setable": false,
@@ -662,7 +1462,17 @@
     "return_arrival_time": {
       "type": "string",
       "title": {
-        "en": "Return Arrival"
+        "en": "Return Arrival",
+        "nl": "Retour Aankomst",
+        "da": "Retur Ankomst",
+        "de": "Rückkehr Ankunft",
+        "es": "Llegada de Devolución",
+        "fr": "Retour Arrivée",
+        "it": "Ritorno Arrivo",
+        "no": "Retur Ankomst",
+        "sv": "Retur Ankomst",
+        "pl": "Powrót Przybycia",
+        "ko": "반품 도착"
       },
       "getable": true,
       "setable": false,
@@ -672,7 +1482,17 @@
     "return_departure_time": {
       "type": "string",
       "title": {
-        "en": "Return Departure"
+        "en": "Return Departure",
+        "nl": "Retour Vertrek",
+        "da": "Returafgang",
+        "de": "Rückkehr Abfahrt",
+        "es": "Salida de Regreso",
+        "fr": "Départ de Retour",
+        "it": "Partenza di Ritorno",
+        "no": "Returavgang",
+        "sv": "Returavfärd",
+        "pl": "Powrót",
+        "ko": "귀환 출발"
       },
       "getable": true,
       "setable": false,
@@ -682,7 +1502,17 @@
     "return_duration": {
       "type": "string",
       "title": {
-        "en": "Return Duration"
+        "en": "Return Duration",
+        "nl": "Retourduur",
+        "da": "Returvarighed",
+        "de": "Rückgabedauer",
+        "es": "Duración de la Devolución",
+        "fr": "Durée de Retour",
+        "it": "Durata del Reso",
+        "no": "Returperiode",
+        "sv": "Returperiod",
+        "pl": "Czas Zwrotu",
+        "ko": "반품 기간"
       },
       "getable": true,
       "setable": false,
@@ -692,7 +1522,17 @@
     "route": {
       "type": "string",
       "title": {
-        "en": "Route"
+        "en": "Route",
+        "nl": "Route",
+        "da": "Rute",
+        "de": "Route",
+        "es": "Ruta",
+        "fr": "Itinéraire",
+        "it": "Percorso",
+        "no": "Rute",
+        "sv": "Rutt",
+        "pl": "Trasa",
+        "ko": "경로"
       },
       "getable": true,
       "setable": false,
@@ -702,7 +1542,17 @@
     "ship_name": {
       "type": "string",
       "title": {
-        "en": "Ship"
+        "en": "Ship",
+        "nl": "Schip",
+        "da": "Skib",
+        "de": "Schiff",
+        "es": "Barco",
+        "fr": "Bateau",
+        "it": "Nave",
+        "no": "Skip",
+        "sv": "Fartyg",
+        "pl": "Statek",
+        "ko": "배"
       },
       "getable": true,
       "setable": false,
@@ -712,7 +1562,17 @@
     "total_price": {
       "type": "string",
       "title": {
-        "en": "Total Price"
+        "en": "Total Price",
+        "nl": "Totale Prijs",
+        "da": "Total Pris",
+        "de": "Gesamtpreis",
+        "es": "Precio Total",
+        "fr": "Prix Total",
+        "it": "Prezzo Totale",
+        "no": "Totalpris",
+        "sv": "Totalt Pris",
+        "pl": "Całkowita Cena",
+        "ko": "총 가격"
       },
       "getable": true,
       "setable": false,
@@ -722,7 +1582,17 @@
     "trip_type": {
       "type": "string",
       "title": {
-        "en": "Trip Type"
+        "en": "Trip Type",
+        "nl": "Reistype",
+        "da": "Rejsetype",
+        "de": "Reiseart",
+        "es": "Tipo de viaje",
+        "fr": "Type de voyage",
+        "it": "Tipo di viaggio",
+        "no": "Reisetype",
+        "sv": "Resetyp",
+        "pl": "Typ podróży",
+        "ko": "여행 유형"
       },
       "getable": true,
       "setable": false,

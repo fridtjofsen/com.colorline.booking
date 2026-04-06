@@ -1,15 +1,35 @@
 {
   "type": "number",
   "title": {
-    "en": "Days until departure"
+    "en": "Days until departure",
+    "nl": "Dagen tot vertrek",
+    "da": "Dage indtil afgang",
+    "de": "Tage bis zur Abreise",
+    "es": "Días hasta la salida",
+    "fr": "Jours avant le départ",
+    "it": "Giorni fino alla partenza",
+    "no": "Dager til avreise",
+    "sv": "Dagar till avresa",
+    "pl": "Dni do wyjazdu",
+    "ko": "출발까지 남은 일수"
   },
   "units": {
-    "en": "d"
+    "en": "d",
+    "nl": "d",
+    "da": "d",
+    "de": "d",
+    "es": "d",
+    "fr": "j",
+    "it": "g",
+    "no": "d",
+    "sv": "d",
+    "pl": "d",
+    "ko": "일"
   },
   "decimals": 1,
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",
-  "insights": true,
+  "insights": false,
   "icon": "/assets/icons/days_until_departure.svg"
 }

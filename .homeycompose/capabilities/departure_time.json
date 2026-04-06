@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Departure Time"
+    "en": "Departure Time",
+    "nl": "Vertrektijd",
+    "da": "Afgangstid",
+    "de": "Abfahrtszeit",
+    "es": "Hora de Salida",
+    "fr": "Heure de Départ",
+    "it": "Orario di Partenza",
+    "no": "Avgangstid",
+    "sv": "Avgångstid",
+    "pl": "Czas Odjazdu",
+    "ko": "출발 시간"
   },
   "getable": true,
   "setable": false,

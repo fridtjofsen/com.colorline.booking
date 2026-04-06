@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Route"
+    "en": "Route",
+    "nl": "Route",
+    "da": "Rute",
+    "de": "Route",
+    "es": "Ruta",
+    "fr": "Itinéraire",
+    "it": "Percorso",
+    "no": "Rute",
+    "sv": "Rutt",
+    "pl": "Trasa",
+    "ko": "경로"
   },
   "getable": true,
   "setable": false,

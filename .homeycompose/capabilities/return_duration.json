@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Return Duration"
+    "en": "Return Duration",
+    "nl": "Retourduur",
+    "da": "Returvarighed",
+    "de": "Rückgabedauer",
+    "es": "Duración de la Devolución",
+    "fr": "Durée de Retour",
+    "it": "Durata del Reso",
+    "no": "Returperiode",
+    "sv": "Returperiod",
+    "pl": "Czas Zwrotu",
+    "ko": "반품 기간"
   },
   "getable": true,
   "setable": false,
